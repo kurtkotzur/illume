@@ -25,4 +25,11 @@ class Location < ActiveRecord::Base
     foreign_key: :location_id,
     primary_key: :id
   )
+  
+  has_many(
+    :reviews,
+    class_name: "Review",
+    foreign_key: :location_id,
+    primary_key: :id
+  )
 end
