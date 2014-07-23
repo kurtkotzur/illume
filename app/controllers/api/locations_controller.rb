@@ -40,5 +40,6 @@ module Api
         :noise_level,
         :wheelchair_accessible
       )
+    end
   end
 end

@@ -36,5 +36,6 @@ module Api
         :opening_time,
         :closing_time
       )
+    end
   end
 end

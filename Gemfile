@@ -9,11 +9,20 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'spring', group: :development
 gem 'bcrypt', '~> 3.1.7'
-gem 'debugger', group: [:development, :test]
 gem 'devise'
 gem 'bootstrap-sass'
-gem 'pry-rails'
-gem 'annotate'
+gem 'backbone-on-rails'
+gem 'serialize_json-rails'
+
+group :development do
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'debugger'
+end
+
+group :doc do
+  gem 'sdoc', require: false
+end
