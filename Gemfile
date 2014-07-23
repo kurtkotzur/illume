@@ -16,3 +16,4 @@ gem 'debugger', group: [:development, :test]
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'pry-rails'
+gem 'annotate'
