@@ -20,6 +20,8 @@
             </button>
         </div><div class="review-date">
           <%= moment(review.escape("created_at")).format("MM-DD-YY") %>
+        </div><div class="review-author">
+          <p><%= review.escape("user_name") %>
         </div>
       </div>
       <div class="panel-body">
