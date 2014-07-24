@@ -24,7 +24,7 @@ module Api
     def show
       @location = Location.find(params[:id])
       
-      render json: @location
+      render json: @location, include: [:reviews]
     end
     
     private

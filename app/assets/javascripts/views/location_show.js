@@ -17,6 +17,7 @@ YelpClone.Views.LocationShow = Backbone.CompositeView.extend({
   },
   
   render: function () {
+    debugger
     var renderedContent = this.template({ location: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews();

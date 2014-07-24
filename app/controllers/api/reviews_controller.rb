@@ -17,7 +17,12 @@ module Api
     end
     
     def index
-      @reviews = Review.all
+      if params[:location_id]
+        @reviews = Review.where(location_id: params[:board_id])
+      elsif params[:user_id]
+        @reviews = Review.where(user_id: params[:user_id])
+      end
+        
       render json: @reviews
     end
     
