@@ -19,6 +19,13 @@
 class Location < ActiveRecord::Base
   validates :name, :category, :address, presence: true
   
+  has_attached_file :location_photo, styles: {
+    big: "500x500",
+    small: "250x250"
+  }
+  
+  validates_attachment_content_type :location_photo, content_type: /\Aimage\/.*\Z/
+  
   has_many(
     :days,
     class_name: "Day",

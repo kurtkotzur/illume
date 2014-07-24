@@ -1,5 +1,17 @@
 module Api
   class LocationsController < ApiController
+    wrap_parameters :location, include: [
+      :location_photo,
+      :name,
+      :category,
+      :address,
+      :ambience,
+      :wifi,
+      :attire,
+      :noise_level,
+      :wheelchair_accessible
+    ]
+    
     def create
       @location = Location.new(location_params)
       
@@ -38,7 +50,8 @@ module Api
         :wifi,
         :attire,
         :noise_level,
-        :wheelchair_accessible
+        :wheelchair_accessible,
+        :location_photo
       )
     end
   end

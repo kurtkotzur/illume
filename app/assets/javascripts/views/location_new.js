@@ -2,7 +2,8 @@ YelpClone.Views.LocationNew = Backbone.View.extend({
   template: JST["location_new"],
   
   events: {
-    "submit form": "submit"
+    "submit form": "submit",
+    "change input.picture-upload": "upload_picture"
   },
   
   render: function () {
@@ -14,7 +15,7 @@ YelpClone.Views.LocationNew = Backbone.View.extend({
   
   submit: function (event) {
     event.preventDefault();
-    var params = $(event.currentTarget).serializeJSON();
+    var params = $(event.currentTarget).serializeJSON()["location"];
     this.model.set(params);
     this.collection.create(this.model, {
       success: function (data) {
@@ -25,5 +26,15 @@ YelpClone.Views.LocationNew = Backbone.View.extend({
         console.log("location creation unsuccessful");
       }
     });
+  },
+  
+  upload_picture: function (event) {
+    var picture = event.currentTarget.files[0];
+    var reader = new FileReader();
+    var that = this;
+    reader.onload = function (e) {
+      that.model.set("location_photo", e.target.result);
+    }
+    reader.readAsDataURL(picture);
   }
 });
