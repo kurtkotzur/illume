@@ -15,11 +15,16 @@
  */
 @import "bootstrap";
 
-.star {
+.star, .static-star {
   background-color: #C0C0C0;
-  margin: 0px;
-  border-color: white;
+  margin: 1px;
+  border-color: #C0C0C0;
 }
+
+.static-star:hover {
+  background-color: #C0C0C0;
+  border-color: #C0C0C0;
+};
 
 .star:hover {
   border-color: white;
@@ -29,22 +34,31 @@
   color: white;
 }
 
-.star.stars-selected-1 {
+.star.stars-selected-1, .static-star.stars-selected-1 {
   background-color: black;
+  border-color: black;
 }
 
-.star.stars-selected-2 {
+.star.stars-selected-2, .static-star.stars-selected-2 {
   background-color: #556B2F;
+  border-color: #556B2F;
 }
 
-.star.stars-selected-3 {
+.star.stars-selected-3, .static-star.stars-selected-3 {
   background-color: #228B22;
+  border-color: #228B22;
 }
 
-.star.stars-selected-4 {
+.star.stars-selected-4, .static-star.stars-selected-4 {
   background-color: #32CD32;
+  border-color: #32CD32;
 }
 
-.star.stars-selected-5 {
+.star.stars-selected-5, .static-star.stars-selected-5 {
   background-color: #00FF00;
+  border-color: #00FF00;
+}
+
+.location-info {
+  list-style-type: none;
 }

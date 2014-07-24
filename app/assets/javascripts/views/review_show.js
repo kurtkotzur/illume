@@ -2,27 +2,28 @@ YelpClone.Views.ReviewShow = Backbone.View.extend({
   template: JST["review_show"],
   
   ratingClass: function () {
-    return "stars-selected" + String(this.model.get("num_stars"));
+    return "stars-selected-" + String(this.model.get("num_stars"));
   },
   
   render: function () {
     var renderedContent = this.template({ review: this.model });
     
-    $currentStars = $("div.star-rating#" + String(this.model.get("id")));
-    console.log($currentStars.length);
+    this.$el.html(renderedContent);
+    
+    var $currentStars = this.$("div.star-rating[data-review-id='" + this.model.get('id') + "']");
+    
     var starsToEdit = [];
     var i = 1;
     while (starsToEdit.length < this.model.get("num_stars")) {
-      $currentStar = $currentStars.find("#" + i);
+      $currentStar = $currentStars.find("[data-star-id='" + String(i) + "']");
       starsToEdit.push($currentStar);
       i++;
     }
+    
     var that = this;
     starsToEdit.forEach( function (star) {
       star.addClass(that.ratingClass());
     });
-    
-    this.$el.html(renderedContent);
     
     return this;
   }

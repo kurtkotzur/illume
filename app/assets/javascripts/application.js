@@ -15,6 +15,7 @@
 //= require jquery.serializeJSON
 //= require underscore
 //= require backbone
+//= require moment
 //= require yelp_clone
 //= require_tree ../templates
 //= require_tree ./utils
