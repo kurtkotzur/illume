@@ -1,0 +1,18 @@
+<h3>Add review</h3>
+
+<form>
+  <input type="hidden" name="review[location_id]" value="<%= location.get('id') %>">
+  
+  <div class="form-group">
+    <label for="review-body"></label>
+    <textarea class="form-control" name="review[body]" autofocus="true"></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="review-stars">Number of stars</label>
+    <input type="number" name="review[num_stars]">
+  </div>
+  
+  <button class="btn btn-success">Submit</button>
+  
+</form>

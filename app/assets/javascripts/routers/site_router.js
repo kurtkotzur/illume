@@ -26,6 +26,7 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
   
   locationShow: function (id) {
     var location = YelpClone.Collections.locations.getOrFetch(id);
+    location.fetch();
     var locationShowView = new YelpClone.Views.LocationShow({ model: location });
     this._swapView(locationShowView);
   },

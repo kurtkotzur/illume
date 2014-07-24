@@ -6,7 +6,7 @@ YelpClone.Views.ReviewNew = Backbone.View.extend({
   },
   
   render: function () {
-    var renderedContent = this.template({ review: this.model });
+    var renderedContent = this.template({ location: this.model });
     this.$el.html(renderedContent);
     
     return this;
@@ -14,5 +14,15 @@ YelpClone.Views.ReviewNew = Backbone.View.extend({
   
   submit: function (event) {
     event.preventDefault();
+    
+    var params = $(event.currentTarget).serializeJSON();
+    var review = new YelpClone.Models.Review(params["review"]);
+    var that = this;
+    review.save({}, {
+      success: function () {
+        that.model.reviews().add(review);
+        that.render();
+      }
+    });
   }
 });
