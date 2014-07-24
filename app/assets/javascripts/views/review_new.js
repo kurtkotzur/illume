@@ -73,6 +73,7 @@ YelpClone.Views.ReviewNew = Backbone.View.extend({
       success: function () {
         that.model.reviews().add(review);
         that.render();
+        that.model.fetch();
       }
     });
   }

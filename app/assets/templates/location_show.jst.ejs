@@ -1,5 +1,24 @@
 <h2><%= location.escape("name") %></h2>
+
 <ul class="location-info">
+  <li class="average-stars">
+    <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1">
+      <span class="glyphicon glyphicon-heart"></span>
+    </button
+    ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2">
+      <span class="glyphicon glyphicon-heart"></span>
+    </button
+    ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3">
+      <span class="glyphicon glyphicon-heart"></span>
+    </button
+    ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4">
+      <span class="glyphicon glyphicon-heart"></span>
+    </button
+    ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5">
+      <span class="glyphicon glyphicon-heart"></span>
+    </button
+    > <%= location.reviews().length %> Reviews
+  </li>
   <li><%= location.escape("category") %></li>
   <li><%= location.escape("address") %></li>
 </ul>

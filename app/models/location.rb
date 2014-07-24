@@ -30,6 +30,12 @@ class Location < ActiveRecord::Base
     :reviews,
     class_name: "Review",
     foreign_key: :location_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
+  
+  def update_stars!
+    self.average_stars = self.reviews.average(:num_stars)
+    self.save!
+  end
 end
