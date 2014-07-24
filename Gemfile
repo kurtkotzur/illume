@@ -10,10 +10,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
 gem 'bootstrap-sass'
 gem 'backbone-on-rails'
 gem 'serialize_json-rails'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'figaro'
 
 group :development do
   gem 'annotate'
