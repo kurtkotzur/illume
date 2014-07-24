@@ -23,7 +23,7 @@ module Api
         @reviews = Review.where(user_id: params[:user_id])
       end
         
-      render json: @reviews
+      render json: @reviews, include: [:user]
     end
     
     def show

@@ -13,4 +13,38 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+@import "bootstrap";
+
+.star {
+  background-color: #C0C0C0;
+  margin: 0px;
+  border-color: white;
+}
+
+.star:hover {
+  border-color: white;
+}
+
+.glyphicon-heart {
+  color: white;
+}
+
+.star.stars-selected-1 {
+  background-color: black;
+}
+
+.star.stars-selected-2 {
+  background-color: #556B2F;
+}
+
+.star.stars-selected-3 {
+  background-color: #228B22;
+}
+
+.star.stars-selected-4 {
+  background-color: #32CD32;
+}
+
+.star.stars-selected-5 {
+  background-color: #00FF00;
+}

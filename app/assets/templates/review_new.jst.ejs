@@ -1,18 +1,41 @@
-<h3>Add review</h3>
-
-<form>
-  <input type="hidden" name="review[location_id]" value="<%= location.get('id') %>">
+<div class="row">
+  <div class="col-xs-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">Add a review</div>
+      <form class="panel-body">
+        <input type="hidden" name="review[location_id]" value="<%= location.get('id') %>">
   
-  <div class="form-group">
-    <label for="review-body"></label>
-    <textarea class="form-control" name="review[body]" autofocus="true"></textarea>
+        <div class="star-rating">
+            <button type="button" class="btn btn-default btn-xs star" id="1">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="2">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="3">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="4">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="5">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button>
+        </div>
+  
+        <div class="form-group">
+          <label for="review-body"></label>
+          <textarea class="form-control" name="review[body]" autofocus="true"></textarea>
+        </div>
+  
+        <!-- <div class="form-group">
+          <label for="review-stars">Number of stars</label>
+          <input type="number" name="review[num_stars]">
+        </div> -->
+  
+        <button class="btn btn-sm btn-success">Submit</button>
+  
+      </form>
+    </div>
   </div>
-  
-  <div class="form-group">
-    <label for="review-stars">Number of stars</label>
-    <input type="number" name="review[num_stars]">
-  </div>
-  
-  <button class="btn btn-success">Submit</button>
-  
-</form>
+</div>

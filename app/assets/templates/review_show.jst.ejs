@@ -1,2 +1,29 @@
-<p><%= review.escape("num_stars") %>Stars</p>
-<p><%= review.escape("body") %></p>
+<div class="row">
+  <div class="col-xs-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="star-rating" id="<%= review.get('id') %>">
+            <button type="button" class="btn btn-default btn-xs star" id="1">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="2">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="3">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="4">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button
+            ><button type="button" class="btn btn-default btn-xs star" id="5">
+              <span class="glyphicon glyphicon-heart"></span>
+            </button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <p><%= review. %>
+        <p><%= review.escape("body") %></p>
+      </div>
+    </div>
+  </div>
+</div>
