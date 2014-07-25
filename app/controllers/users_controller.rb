@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def show
     if params.include?(:id)
       @user = User.find(params[:id])
-      render json: @user #TODO: make jbuilder file
+      render 'show.json.jbuilder'
     else
       redirect_to user_url(current_user)
     end
