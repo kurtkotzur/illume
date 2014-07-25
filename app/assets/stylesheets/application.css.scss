@@ -15,8 +15,16 @@
  */
 @import "bootstrap";
 
+nav {
+  border-radius: 0 !important;
+}
+
 body {
   background-color: whitesmoke;
+}
+
+label {
+  font-weight: normal !important;
 }
 
 .star, .static-star {
@@ -63,7 +71,7 @@ body {
   border-color: #00FF00;
 }
 
-.location-info, .more-location-info {
+.location-info, .more-location-info, .review-info-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -161,8 +169,13 @@ img.logo-image {
   box-shadow: 0px 0px 50px palegreen;
 };*/
 
-.img-thumbnail {
+.photo-thumbnail {
   width: 300px;
+  margin: 10px;
+}
+
+div.thumbnail {
+  width: 310px;
   float: left;
   margin: 10px;
 }
@@ -171,4 +184,18 @@ img.logo-image {
   background-color: whitesmoke;
   color: black;
   border-color: lightgrey;
+}
+
+.signout-button:hover {
+  background-color: #556B2F;
+  border-color: #556B2F;
+}
+
+.white-text {
+  color: white;
+}
+
+.photo-thumbnail {
+width: 300px;
+margin: 0px;
 }

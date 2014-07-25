@@ -5,7 +5,7 @@ module Api
       @review.user_id = current_user.id
       if @review.save
         @review.location.update_stars!
-        render json: @review
+        render json: @review, include: [:user]
       else
         render json: @review.errors.full_messages, status: :unprocessable_entity
       end

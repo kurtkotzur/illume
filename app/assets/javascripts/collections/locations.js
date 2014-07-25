@@ -1,5 +1,6 @@
 YelpClone.Collections.Locations = Backbone.Collection.extend({
   model: YelpClone.Models.Location,
+  
   url: "/api/locations",
   
   getOrFetch: function (id) {

@@ -9,7 +9,7 @@ YelpClone.Collections.Users = Backbone.Collection.extend({
     var user;
     if (!(user = this.get(id))) {
       user = new YelpClone.Models.User({ id: id });
-      users.fetch({
+      user.fetch({
         sucess: function () { users.add(user); }
       });
     }

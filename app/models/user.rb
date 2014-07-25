@@ -18,6 +18,13 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
 
   before_validation :ensure_session_token
+  
+  has_attached_file :user_photo, styles: {
+    big: "500x500",
+    small: "250x250"
+  }
+  
+  validates_attachment_content_type :user_photo, content_type: /\Aimage\/.*\Z/
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

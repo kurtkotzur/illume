@@ -2,25 +2,28 @@
   <div class="col-xs-8">
     <div class="panel panel-default review-container clearfix hoverable">
       <div class="review-info">
-        <div class="review-author">
-          <a href="#/users/<%= review.user().get('id') %>"><%= review.user().escape('username') %></a>
-        </div>
+        <ul class="review-info-list">
+          <li class="review-author">
+            <a href="#/users/<%= review.user().get('id') %>"><%= review.user().escape('username') %></a>
+          </li>
+          <li><%= review.user().escape("city") %>, <%= review.user().escape("state") %></li>
+        </ul>
       </div>
       <div class="review-body">
         <div class="star-rating" data-review-id="<%= review.get('id') %>">
-            <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1">
+            <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1" disabled>
               <span class="glyphicon glyphicon-heart"></span>
             </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2">
+            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2" disabled>
               <span class="glyphicon glyphicon-heart"></span>
             </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3">
+            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3" disabled>
               <span class="glyphicon glyphicon-heart"></span>
             </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4">
+            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4" disabled>
               <span class="glyphicon glyphicon-heart"></span>
             </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5">
+            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
               <span class="glyphicon glyphicon-heart"></span>
             </button>
         </div><div class="review-date">

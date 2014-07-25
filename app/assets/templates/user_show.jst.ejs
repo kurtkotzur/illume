@@ -2,6 +2,7 @@
   <div class="col-xs-8">
     <div class="panel panel-default user-container clearfix hoverable">
       <h1><%= user.escape("username") %>
+      <img src="<%= user.get('photo_url') %>" class="img-responsive">
     </div>
   </div>
 </div>
