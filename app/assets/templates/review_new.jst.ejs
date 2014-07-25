@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-8">
-    <div class="panel panel-default">
+    <div class="panel panel-default hoverable">
       <div class="panel-heading">Add a review</div>
       <form class="panel-body">
         <input type="hidden" name="review[location_id]" value="<%= location.get('id') %>">
@@ -25,7 +25,7 @@
   
         <div class="form-group">
           <label for="review-body"></label>
-          <textarea class="form-control" name="review[body]" autofocus="true"></textarea>
+          <textarea class="form-control" name="review[body]" rows="6" autofocus="true"></textarea>
         </div>
   
         <!-- <div class="form-group">
