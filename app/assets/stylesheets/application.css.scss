@@ -146,9 +146,17 @@ img.logo-image {
   margin-left: -5px;
 }
 
-.hoverable {
-  transition: box-shadow 0.3s ease;
+.sign-up-container {
+  padding: 20px;
 }
+
+.sign-in-container {
+  padding: 20px;
+}
+
+//.hoverable {
+//  transition: box-shadow 0.3s ease;
+//}
 
 /*.hoverable:hover {
   box-shadow: 0px 0px 50px palegreen;
