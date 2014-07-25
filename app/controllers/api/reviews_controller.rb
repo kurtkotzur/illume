@@ -31,7 +31,7 @@ module Api
     def show
       @review = Review.find(params[:id])
       
-      render json: @review
+      render json: @review, include: [:user]
     end
     
     private

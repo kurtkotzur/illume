@@ -1,13 +1,4 @@
+<a href="#/locations/new"><button class="btn btn-success add-review">Add location</button></a>
+
 <h2>Locations</h2>
-  
-<ul>
-  <% locations.each( function (location) { %>
-    <li>
-      <a href="#/locations/<%= location.get('id') %>">
-        <%= location.escape('name') %>
-      </a>
-    </li>
-  <% }); %>
-</ul>
-  
-<a href="#/locations/new">Add new location</a>
+<div class="locations"></div>

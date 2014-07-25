@@ -9,6 +9,7 @@ YelpClone.Views.LocationInfo = Backbone.View.extend({
     return Math.round(this.model.get("average_stars") * 2) / 2;
   },
   
+  //TODO: add half stars
   render: function () {
     var renderedContent = this.template({ location: this.model });
     this.$el.html(renderedContent);

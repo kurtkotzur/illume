@@ -3,9 +3,16 @@ YelpClone.Models.Review = Backbone.Model.extend({
   
   parse: function (payload) {
     if (payload.user) {
-      this._user = this._user || payload.user;
+      this.user().set(payload.user);
       delete payload.user;
     }
     return payload;
+  },
+  
+  user: function() {
+    if(!this._user) {
+      this._user = new YelpClone.Models.User();
+    }
+    return this._user;
   }
 });

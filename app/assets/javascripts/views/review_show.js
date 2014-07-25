@@ -1,6 +1,10 @@
 YelpClone.Views.ReviewShow = Backbone.View.extend({
   template: JST["review_show"],
   
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.render);
+  },
+  
   ratingClass: function () {
     return "stars-selected-" + String(this.model.get("num_stars"));
   },

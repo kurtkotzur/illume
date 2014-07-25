@@ -34,7 +34,7 @@ module Api
     
     def index
       @locations = Location.all
-      render json: @locations
+      render :index
     end
     
     def show
