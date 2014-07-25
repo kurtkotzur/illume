@@ -17,6 +17,12 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def index
+    @users = User.all
+    
+    render json: @users
+  end
 
   def show
     if params.include?(:id)

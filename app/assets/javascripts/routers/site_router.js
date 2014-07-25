@@ -6,7 +6,8 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
   routes: {
     "": "locationsIndex",
     "locations/new": "locationNew",
-    "locations/:id": "locationShow"
+    "locations/:id": "locationShow",
+    "users/:id": "userShow"
   },
   
   locationsIndex: function () {
@@ -29,6 +30,12 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     location.fetch();
     var locationShowView = new YelpClone.Views.LocationShow({ model: location });
     this._swapView(locationShowView);
+  },
+  
+  userShow: function (id) {
+    var user = YelpClone.Collections.users.getOrFetch(id);
+    var userShowView = new YelpClone.Views.UserShow({ model: user });
+    this._swapView(userShowView);
   },
   
   _swapView: function (newView) {

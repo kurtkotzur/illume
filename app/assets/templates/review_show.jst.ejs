@@ -3,7 +3,7 @@
     <div class="panel panel-default review-container clearfix hoverable">
       <div class="review-info">
         <div class="review-author">
-          <p><%= review.user().escape('username') %>
+          <a href="#/users/<%= review.user().get('id') %>"><%= review.user().escape('username') %></a>
         </div>
       </div>
       <div class="review-body">
