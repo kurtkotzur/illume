@@ -1,7 +1,12 @@
 <div class="row">
   <div class="col-xs-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+    <div class="panel panel-default review-container clearfix">
+      <div class="review-info">
+        <div class="review-author">
+          <p><%= review.escape("user_name") %>
+        </div>
+      </div>
+      <div class="review-body">
         <div class="star-rating" data-review-id="<%= review.get('id') %>">
             <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1">
               <span class="glyphicon glyphicon-heart"></span>
@@ -20,12 +25,8 @@
             </button>
         </div><div class="review-date">
           <%= moment(review.escape("created_at")).format("MM-DD-YY") %>
-        </div><div class="review-author">
-          <p><%= review.escape("user_name") %>
         </div>
-      </div>
-      <div class="panel-body">
-        <p><%= review.escape("body") %></p>
+        <p class="review-text"><%= review.escape("body") %></p>
       </div>
     </div>
   </div>

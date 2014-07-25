@@ -15,6 +15,10 @@
  */
 @import "bootstrap";
 
+body {
+  background-color: ghostwhite;
+}
+
 .star, .static-star {
   background-color: #C0C0C0;
   margin: 1px;
@@ -59,7 +63,7 @@
   border-color: #00FF00;
 }
 
-.location-info {
+.location-info, .more-location-info {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -72,4 +76,62 @@
 .location-photo {
   width: 250px;
   height: 250px;
+  margin-top: 30px;
+}
+
+.add-review {
+  float: right;
+}
+
+.review-info {
+  float: left;
+  margin: 10px;
+  width: 150px;
+}
+
+.review-body {
+  margin: 10px;
+  float: left;
+  width: 450px;
+}
+
+.review-container {
+  margin: 10px;
+  shadow: none;
+  background-color: white;
+  padding: 10px;
+}
+
+.clearfix:after {
+  clear: both;
+  display: table;
+  content: ' ';
+}
+
+.location-info-container, .new-location-container {
+ padding: 20px; 
+}
+
+.location-left-col {
+  float: left;
+  width: 300px;
+  margin: 10px;
+}
+
+.location-right-col {
+  float: right;
+  width: 300px;
+  margin-top: 30px;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.more-location-info > li {
+  margin: 10px;
+}
+
+.location-info-container {
+  height: 403px;
 }

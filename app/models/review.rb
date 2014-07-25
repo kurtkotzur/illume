@@ -29,5 +29,5 @@ class Review < ActiveRecord::Base
     primary_key: :id
   )
   
-  default_scope { order(created_at: :desc) }
+  default_scope { order(created_at: :asc) }
 end

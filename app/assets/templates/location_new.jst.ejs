@@ -1,6 +1,7 @@
 <div class="row">
-<div class="col-xs-4 col-xs-offset-3">
+<div class="col-xs-5 col-xs-offset-3">
 <h2>Add location</h2>
+<div class="panel panel-default new-location-container">
 <form>
   
   <div class="form-group">
@@ -33,13 +34,13 @@
     <select class="form-control select-disabled" name="location[ambience]">
       <option value=""></option>
       <option class="placeholder" value="" disabled selected>Academic</option>
-      <option value="casual">Casual</option>
-      <option value="classy">Classy</option>
-      <option value="hispter">Hipster</option>
-      <option value="intimate">Intimate</option>
-      <option value="romantic">Romantic</option>
-      <option value="touristy">Touristy</option>
-      <option value="trendy">Trendy</option>      
+      <option value="Casual">Casual</option>
+      <option value="Classy">Classy</option>
+      <option value="Hispter">Hipster</option>
+      <option value="Intimate">Intimate</option>
+      <option value="Romantic">Romantic</option>
+      <option value="Touristy">Touristy</option>
+      <option value="Trendy">Trendy</option>      
     </select>
   </div>
   
@@ -48,8 +49,8 @@
     <select class="form-control select-disabled" name="location[attire]">
       <option value=""></option>
       <option class="placeholder" value="" disabled selected>Any</option>
-      <option value="casual">Casual</option>
-      <option value="dressy">Dressy</option>
+      <option value="Casual">Casual</option>
+      <option value="Dressy">Dressy</option>
     </select>
   </div>
   
@@ -58,9 +59,23 @@
     <select class="form-control select-disabled" name="location[noise_level]">
       <option value=""></option>
       <option class="placeholder" value="" disabled selected>Jackhammer</option>
-      <option value="silent">Silent</option>
-      <option value="average">Average</option>
-      <option value="loud">Loud</option>
+      <option value="Silent">Silent</option>
+      <option value="Quiet">Quiet</option>
+      <option value="Average">Average</option>
+      <option value="Loud">Loud</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="location-cleanness-input">Cleanness</label>
+    <select class="form-control select-disabled" name="location[cleanness]">
+      <option value=""></option>
+      <option class="placeholder" value="" disabled selected>Acceptable</option>
+      <option value="Filthy">Filthy</option>
+      <option value="Dirty">Dirty</option>
+      <option value="Average">Average</option>
+      <option value="Fresh">Fresh</option>
+      <option value="Immaculate">Immaculate</option>
     </select>
   </div>
   
@@ -78,6 +93,27 @@
     </label>
   </div>
   
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="location[good_for_kids]" value="true">
+      Good for kids
+    </label>
+  </div>
+  
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="location[good_for_groups]" value="true">
+      Good for groups
+    </label>
+  </div>
+  
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="location[outdoor]" value="true">
+      Outdoor
+    </label>
+  </div>
+  
   <div class="form-group">
     <label for="picture-upload">Add photo</label>
       <input class="picture-upload" type="file" multiple>
@@ -87,5 +123,6 @@
   <button class="btn btn-success">Submit</button>
   
 </form>
+</div>
 </div>
 </div>

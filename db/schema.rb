@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725001905) do
+ActiveRecord::Schema.define(version: 20140725020303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20140725001905) do
     t.string   "location_photo_content_type"
     t.integer  "location_photo_file_size"
     t.datetime "location_photo_updated_at"
+    t.string   "cleanness"
+    t.boolean  "good_for_kids",               default: false
+    t.boolean  "good_for_groups",             default: false
+    t.boolean  "outdoor",                     default: false
   end
 
   create_table "reviews", force: true do |t|

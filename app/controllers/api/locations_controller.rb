@@ -9,7 +9,11 @@ module Api
       :wifi,
       :attire,
       :noise_level,
-      :wheelchair_accessible
+      :wheelchair_accessible,
+      :cleanness,
+      :good_for_kids,
+      :good_for_groups,
+      :outdoor
     ]
     
     def create
@@ -51,7 +55,11 @@ module Api
         :attire,
         :noise_level,
         :wheelchair_accessible,
-        :location_photo
+        :location_photo,
+        :cleanness,
+        :good_for_kids,
+        :good_for_groups,
+        :outdoor
       )
     end
   end
