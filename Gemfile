@@ -17,6 +17,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
 gem 'kaminari'
+gem 'font-awesome-sass'
 
 group :development do
   gem 'annotate'
