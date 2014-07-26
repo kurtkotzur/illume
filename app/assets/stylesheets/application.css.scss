@@ -15,8 +15,6 @@
  */
 @import "bootstrap";
 
-
-
 nav {
   border-radius: 0 !important;
 }
@@ -245,4 +243,21 @@ h2.username {
 
 .btn[disabled] {
   opacity: 1;
+}
+
+.category-icon-container {
+  height: 150px;
+  width: 10px;
+  vertical-align: middle;
+  background-color: whitesmoke;
+//  margin: 0px;
+//  border: none;
+}
+
+.category-icon {
+  max-height: 100px;
+}
+
+.logo-icon-container {
+  background-color: whitesmoke;
 }

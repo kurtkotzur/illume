@@ -7,7 +7,13 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     "": "locationsIndex",
     "locations/new": "locationNew",
     "locations/:id": "locationShow",
-    "users/:id": "userShow"
+    "users/:id": "userShow",
+    "category_index": "categoryIndex"
+  },
+  
+  categoryIndex: function () {
+    var categoryIndexView = new YelpClone.Views.CategoryIndex();
+    this._swapView(categoryIndexView);
   },
   
   locationsIndex: function () {
