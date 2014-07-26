@@ -1,4 +1,139 @@
-<a href="#/locations/new"><button class="btn btn-success add-review">Add location</button></a>
+<div class="modal fade" id="newLocationModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">New location</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+  
+          <div class="form-group">
+            <label for="location-name-input">Name</label>
+            <input placeholder="App Academy" class="form-control" type="text" name="location[name]" id="location-name-input" autofocus="true">
+          </div>
+  
+          <div class="form-group">
+            <label for="location-address-input">Address</label>
+            <input placeholder="1061 Market St #4, San Francisco, CA 94103" class="form-control" type="text" name="location[address]" id="location-address-input">
+          </div>
+  
+          <div class="form-group">
+            <label for="location-category-input">Category</label>
+            <select class="form-control select-disabled" name="location[category]" id="location-category-input">
+              <option value=""></option>
+              <option class="placeholder" value="" disabled selected>Coding bootcamp</option>
+              <option value="Anthill">Anthill</option>
+              <option value="Bathroom">Bathroom</option>
+              <option value="Bench">Bench</option>
+              <option value="Bike rack">Bike rack</option>
+              <option value="Motorcycle parking">Motorcycle parking</option>
+              <option value="Trashcan">Trashcan</option>
+              <option value="Vending machine">Vending machine</option>
+              <option value="Water fountain">Water fountain</option>      
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="location-ambience-input">Ambience</label>
+            <select class="form-control select-disabled" name="location[ambience]">
+              <option value=""></option>
+              <option class="placeholder" value="" disabled selected>Academic</option>
+              <option value="Casual">Casual</option>
+              <option value="Classy">Classy</option>
+              <option value="Hispter">Hipster</option>
+              <option value="Intimate">Intimate</option>
+              <option value="Romantic">Romantic</option>
+              <option value="Touristy">Touristy</option>
+              <option value="Trendy">Trendy</option>      
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="location-attire-input">Attire</label>
+            <select class="form-control select-disabled" name="location[attire]">
+              <option value=""></option>
+              <option class="placeholder" value="" disabled selected>Any</option>
+              <option value="Casual">Casual</option>
+              <option value="Dressy">Dressy</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="location-noise-input">Noise level</label>
+            <select class="form-control select-disabled" name="location[noise_level]">
+              <option value=""></option>
+              <option class="placeholder" value="" disabled selected>Jackhammer</option>
+              <option value="Silent">Silent</option>
+              <option value="Quiet">Quiet</option>
+              <option value="Average">Average</option>
+              <option value="Loud">Loud</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="location-cleanness-input">Cleanness</label>
+            <select class="form-control select-disabled" name="location[cleanness]">
+              <option value=""></option>
+              <option class="placeholder" value="" disabled selected>Acceptable</option>
+              <option value="Filthy">Filthy</option>
+              <option value="Dirty">Dirty</option>
+              <option value="Average">Average</option>
+              <option value="Fresh">Fresh</option>
+              <option value="Immaculate">Immaculate</option>
+            </select>
+          </div>
+  
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="location[wifi]" value="true">
+              Wifi
+            </label>
+          </div>
+  
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="location[wheelchair_accessible]" value="true">
+              Wheelchair accessible
+            </label>
+          </div>
+  
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="location[good_for_kids]" value="true">
+              Good for kids
+            </label>
+          </div>
+  
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="location[good_for_groups]" value="true">
+              Good for groups
+            </label>
+          </div>
+  
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="location[outdoor]" value="true">
+              Outdoor
+            </label>
+          </div>
+  
+          <div class="form-group">
+            <label for="picture-upload">Add photo</label>
+              <input class="picture-upload" type="file" multiple>
+            </label>
+          </div>
+  
+          <button class="btn btn-success">Submit</button>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-success add-review" data-toggle="modal" data-target="#newLocationModal">Add location</button>
 
 <h2>Locations</h2>
 <div class="locations"></div>

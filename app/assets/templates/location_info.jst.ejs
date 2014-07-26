@@ -1,7 +1,25 @@
+<div class="modal fade" id="newReviewModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-xs-8">
     <div class="panel panel-default location-info-container clearfix hoverable">
-    <button class="btn btn-success add-review">Add review</button>
+    <button class="btn btn-success add-review" type="buton" data-toggle="modal" data-target="#newReviewModal">Add review</button>
     <div class="location-left-col">
     <h2><%= location.escape("name") %></h2>
 

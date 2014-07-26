@@ -18,8 +18,9 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
   
   locationsIndex: function () {
     // YelpClone.Collections.locations.fetch();
-    debugger
+    var location = new YelpClone.Models.Location();
     var locationsIndexView = new YelpClone.Views.LocationsIndex({
+      model: location,
       collection: YelpClone.Collections.locations
     });
     this._swapView(locationsIndexView);
