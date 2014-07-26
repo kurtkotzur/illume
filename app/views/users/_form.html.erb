@@ -8,7 +8,7 @@ body {
 }
 </style>
 
-<!-- <div class="panel panel-default sign-up-container clearfix hoverable"> -->
+<div class="panel panel-default sign-up-container clearfix hoverable">
   <form action="<%= action %>" method="post" enctype="multipart/form-data">
 
     <input
@@ -21,7 +21,7 @@ body {
     value="<%= form_authenticity_token %>">
 
     <div class="form-group">
-      <label for="user_username" class="white-text">Username</label>
+      <label for="user_username" class="splash">Username</label>
       <input
       placeholder="kurtkotzur"
       class="form-control"
@@ -31,7 +31,7 @@ body {
     </div>
 
     <div class="form-group">
-      <label for="user_password-input" class="white-text">Password</label>
+      <label for="user_password-input" class="splash">Password</label>
       <input
       placeholder="••••••••"
       class="form-control"
@@ -41,7 +41,7 @@ body {
     </div>
     
     <div class="form-group">
-      <label for="user-address-input" class="white-text">Address</label>
+      <label for="user-address-input" class="splash">Address</label>
       <input
       placeholder="1625 Woolsey St."
       class="form-control"
@@ -51,7 +51,7 @@ body {
     </div>
     
     <div class="form-group">
-      <label for="user-city-input" class="white-text">City</label>
+      <label for="user-city-input" class="splash">City</label>
       <input
       placeholder="Berkeley"
       class="form-control"
@@ -61,7 +61,7 @@ body {
     </div>
     
     <div class="form-group">
-      <label for="user-state-input" class="white-text">State</label>
+      <label for="user-state-input" class="splash">State</label>
       <select
       id="user-state-input"
       class="form-control select-disabled"
@@ -124,7 +124,7 @@ body {
     </div>
     
     <div class="form-group">
-      <label for="user-zip-input" class="white-text">ZIP</label>
+      <label for="user-zip-input" class="splash">ZIP</label>
       <input
       placeholder="94703"
       class="form-control"
@@ -133,11 +133,11 @@ body {
       type="text">
     </div>
     
-    <div class="form-group white-text">
+    <div class="form-group splash">
       <label for="user-photo-input">Photo</label>
       <input class="user-photo-input" name="user[user_photo]" type="file" multiple>
     </div>
 
     <button class="btn btn-success"><%= message %></button>
   </form>
-<!-- </div> -->
+</div>

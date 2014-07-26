@@ -33,7 +33,11 @@ module Api
     end
     
     def index
-      @locations = Location.all
+      if params[:category]
+        @locations = Location.where(category: params[:category])
+      else
+        @locations = Location.all
+      end
       render :index
     end
     

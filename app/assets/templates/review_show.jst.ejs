@@ -3,6 +3,9 @@
     <div class="panel panel-default review-container clearfix hoverable">
       <div class="review-info">
         <ul class="review-info-list">
+          <li>
+            <img class="user-photo-small" src="<%= review.get("user_photo_url") %>">
+          </li>
           <li class="review-author">
             <a href="#/users/<%= review.user().get('id') %>"><%= review.user().escape('username') %></a>
           </li>
@@ -27,7 +30,7 @@
               <span class="glyphicon glyphicon-heart"></span>
             </button>
         </div><div class="review-date">
-          <%= moment(review.escape("created_at")).format("MM-DD-YY") %>
+          <%= moment(review.escape("created_at")).format("M/DD/YY") %>
         </div>
         <p class="review-text"><%= review.escape("body") %></p>
       </div>

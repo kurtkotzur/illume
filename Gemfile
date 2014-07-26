@@ -16,6 +16,7 @@ gem 'serialize_json-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'kaminari'
 
 group :development do
   gem 'annotate'

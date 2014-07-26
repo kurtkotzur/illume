@@ -1,8 +1,14 @@
 <div class="row">
   <div class="col-xs-8">
     <div class="panel panel-default user-container clearfix hoverable">
-      <h1><%= user.escape("username") %>
+      <h2 class="username"><%= user.escape("username") %></h2>
       <img src="<%= user.get('photo_url') %>" class="img-responsive">
+      <ul class="user-info">
+        <li><strong>Location</strong></li>
+        <li><%= user.escape("city") %>, <%= user.escape("state") %></li>
+        <li><strong>illuming since</strong></li>
+        <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
+      </ul>
     </div>
   </div>
 </div>

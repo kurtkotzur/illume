@@ -9,6 +9,7 @@ json.reviews location.reviews do |review|
   json.created_at review.created_at
   json.updated_at review.updated_at
   json.location_id review.location_id
-  json.user review.user, :id, :username
+  json.user review.user, :id, :username, :city, :state
+  json.user_photo_url review.user.user_photo.url
 end
 json.photo_url location.location_photo.url
