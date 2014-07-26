@@ -12,7 +12,7 @@
   <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
     <% if signed_in? %>
     <ul class="nav navbar-nav">
-      <li><a href="/#">Back to index</a></li>
+      <li><a href="/#">All categories</a></li>
       <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn signout-button" %></li>
     <% else %>
     <ul class="nav navbar-nav">
