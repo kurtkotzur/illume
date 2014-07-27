@@ -91,7 +91,7 @@ img.img-responsive {
   max-height: 250px !important;
 }
 
-.add-review {
+.add-favorite {
   float: right;
 }
 
@@ -138,6 +138,7 @@ img.img-responsive {
 
 .navbar {
   background-color: white;
+  border-right: none;
 }
 
 .more-location-info > li {
@@ -310,6 +311,7 @@ html, body {height: 100%;
 	clear: both;
   margin-bottom: 0px;
   border-radius: 0 !important;
+  border-right: none;
 }
 
 a {
@@ -335,7 +337,7 @@ a:hover {
 
 .brand-image-small {
   height: 23px;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .copyright-text{

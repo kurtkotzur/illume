@@ -24,6 +24,19 @@ class User < ActiveRecord::Base
     small: "250x250"
   }
   
+  has_many(
+    :favorites,
+    class_name: "Favorite",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+  
+  has_many(
+    :favorite_locations,
+    through: :favorites,
+    source: :location
+  )
+  
   validates_attachment_content_type :user_photo, content_type: /\Aimage\/.*\Z/
 
   def self.find_by_credentials(username, password)

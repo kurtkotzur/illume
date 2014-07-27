@@ -41,6 +41,19 @@ class Location < ActiveRecord::Base
     dependent: :destroy
   )
   
+  has_many (
+    :favorites,
+    class_name: "Favorite",
+    foreign_key: :favorite_id,
+    primary_key: :id
+  )
+  
+  has_many (
+    :favorite_users,
+    through: :favorites,
+    source: :user
+  )
+  
   def update_stars!
     self.average_stars = self.reviews.average(:num_stars)
     self.save!

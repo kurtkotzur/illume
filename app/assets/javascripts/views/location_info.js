@@ -1,8 +1,24 @@
 YelpClone.Views.LocationInfo = Backbone.View.extend({
   template: JST["location_info"],
   
+  events: {
+    "click button.add-favorite": "addFavorite"
+  },
+  
   initialize: function () {
     this.listenTo(this.model, "all", this.render);
+  },
+  
+  addFavorite: function (event) {
+    event.preventDefault();
+    var params = { "favorite": { "location_id": $(event.currentTarget).data("id") } };
+    var favorite = new YelpClone.Models.Favorite(params);
+    
+    favorite.save({}, {
+      success: function () {
+        console.log(favorite);
+      }
+    });
   },
   
   averageStars: function () {
