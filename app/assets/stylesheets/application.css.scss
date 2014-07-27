@@ -156,7 +156,7 @@ img.logo-image {
 
 .sign-up-container {
   padding: 20px;
-  background-color: rgba(245, 245, 245, 0.7);
+  background-color: rgba(245, 245, 245, 0.8);
   border: none;
 }
 
@@ -233,7 +233,7 @@ h2.username {
 }
 
 .guest-button:hover {
-  box-shadow: 0px 0px 20px whitesmoke;
+//  box-shadow: 0px 0px 20px whitesmoke;
 };
 
 .user-photo-small {
@@ -263,13 +263,6 @@ h2.username {
   margin-right: auto;
   vertical-align: middle;
   margin-top: 60px;
-}
-
-.category-icon-container > .caption {
-  display: block;
-  margin-top: 50px;
-  margin-left: 70px;
-  margin-right: 50px;
 }
 
 .brand-image {
@@ -304,8 +297,8 @@ html, body {height: 100%;
 #footer {position: relative;
   padding-top: 30px;
 	margin-top: -50px;
-	height: 250px;
-	clear:both;
+	height: 255px;
+	clear: both;
   margin-bottom: 0px;
   border-radius: 0 !important;
 }
@@ -346,11 +339,23 @@ a:hover {
   margin-bottom: -10px;
 }
 
-.no-padding-col {
-  padding: -15px !important;
+.middle-cat {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.middle-cat {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.sign-up-container {
+  margin-top: 150px;
+}
+
+a.opaque:hover {
+  opacity: 1;
+}
+
+.logo-brand-image {
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }

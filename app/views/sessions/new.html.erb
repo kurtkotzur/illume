@@ -2,9 +2,19 @@
 body {
   background-image: url("/assets/splash.jpg");
 }
+
+nav {
+  display: none;
+}
+
+#footer {
+  display: none;
+}
 </style>
 <div class="row">
   <div class="col-xs-4 col-xs-offset-4">
+    <div class="panel panel-default sign-up-container clearfix hoverable">
+      <img class="logo-brand-image" src="/assets/logo_with_brand.png">
       <form action="<%= session_url %>" method="post">
         <input
         name="authenticity_token"
@@ -12,7 +22,7 @@ body {
         value="<%= form_authenticity_token %>">
 
         <div class="form-group">
-          <label for="user_username" class="white-text splash">Username</label>
+          <label for="user_username" class="splash">Username</label>
           <input
           class="form-control"
           id="user_username"
@@ -21,7 +31,7 @@ body {
         </div>
 
         <div class="form-group">
-          <label for="user_password" class="white-text splash">Password</label>
+          <label for="user_password" class="splash">Password</label>
           <input
           class="form-control"
           id="user_password"
@@ -31,8 +41,9 @@ body {
 
         <button class="btn btn-default">Sign in</button>
       </form>
-      <a href="/users/new"><button class="btn btn-default sign-up-button">Sign up</button></a>
-      <a href=""><button class="btn btn-default guest-button">Sign in as guest</button></a>
+      <a class="opaque" href="/users/new"><button class="btn btn-default sign-up-button">Sign up</button></a>
+      <a class="opaque" href=""><button class="btn btn-success guest-button">Sign in as guest</button></a>
+    </div>
   </div>
 </div>
 
