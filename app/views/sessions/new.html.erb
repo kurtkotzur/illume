@@ -22,8 +22,8 @@ nav {
         value="<%= form_authenticity_token %>">
 
         <div class="form-group">
-          <label for="user_username" class="splash">Username</label>
           <input
+          placeholder="Username"
           class="form-control"
           id="user_username"
           name="user[username]"
@@ -31,18 +31,18 @@ nav {
         </div>
 
         <div class="form-group">
-          <label for="user_password" class="splash">Password</label>
           <input
+          placeholder="Password"
           class="form-control"
           id="user_password"
           name="user[password]"
           type="password">
         </div>
 
-        <button class="btn btn-default">Sign in</button>
+        <button class="btn btn-info sign-in-button">Sign in</button>
       </form>
-      <a class="opaque" href="/users/new"><button class="btn btn-default sign-up-button">Sign up</button></a>
       <a class="opaque" href=""><button class="btn btn-success guest-button">Sign in as guest</button></a>
+      <span class="sign-up-link">Not a member? <a href="/users/new">Join now</a></span>
     </div>
   </div>
 </div>
