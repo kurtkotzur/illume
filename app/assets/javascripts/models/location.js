@@ -17,8 +17,8 @@ YelpClone.Models.Location = Backbone.Model.extend({
   
   parse: function (payload) {
     if (payload.favorites) {
-      this.reviews().set(payload.reviews, { parse: true });
-      delete payload.reviews;
+      this.favorites().set(payload.favorites, { parse: true });
+      delete payload.favorites;
     }
     if (payload.reviews) {
       this.reviews().set(payload.reviews, { parse: true });

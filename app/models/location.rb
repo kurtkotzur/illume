@@ -44,7 +44,7 @@ class Location < ActiveRecord::Base
   has_many(
     :favorites,
     class_name: "Favorite",
-    foreign_key: :favorite_id,
+    foreign_key: :location_id,
     primary_key: :id
   )
   

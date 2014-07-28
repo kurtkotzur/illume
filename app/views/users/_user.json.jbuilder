@@ -12,6 +12,7 @@ json.reviews user.reviews do |review|
 end
 json.favorites user.favorite_locations do |location|
   json.id location.id
+  json.name location.name
   json.category location.category
   json.address location.address
   json.ambience location.ambience

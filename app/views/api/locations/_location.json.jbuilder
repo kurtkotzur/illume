@@ -12,4 +12,11 @@ json.reviews location.reviews do |review|
   json.user review.user, :id, :username, :city, :state
   json.user_photo_url review.user.user_photo.url
 end
+json.favorites location.favorite_users do |user|
+  json.id user.id
+  json.username user.username
+  json.city user.city
+  json.state user.state
+  json.user_photo_url user.user_photo.url
+end
 json.photo_url location.location_photo.url

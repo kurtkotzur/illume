@@ -14,7 +14,7 @@ YelpClone.Views.UserShow = Backbone.CompositeView.extend({
     var subview = new YelpClone.Views.UserFavoriteShow({ model: favorite });
     this.subviews("#favorites").push(subview);
     this.$("#favorites").preprend(subview.render().$el);
-    subview.delegateEvents();
+    // subview.delegateEvents();
   },
   
   addReview: function (review) {
