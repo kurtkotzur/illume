@@ -280,11 +280,11 @@ h2.username {
   height: 30px;
 }
 
-.location-index-show {
+.location-index-show, .location-favorite-show-container {
   transition: box-shadow 0.3s ease;
 }
 
-.location-index-show:hover {
+.location-index-show:hover, .location-favorite-show-container:hover {
   box-shadow: 0px 0px 30px dimgray;
 }
 

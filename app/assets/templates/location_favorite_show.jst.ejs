@@ -1,10 +1,12 @@
 <span class="pull-right"><div class="row">
   <div class="col-xs-8">
-    <div class="panel panel-default location-favorite-show-container">
-      <div class="review-info">
-        <img class="user-photo-small" src="<%= favorite.get("user_photo_url") %>">
-        <a href="#/users/<%= favorite.get('id') %>"><%= favorite.escape('username') %></a>
+    <a href="#/users/<%= favorite.get('id') %>">
+      <div class="panel panel-default location-favorite-show-container">
+        <div class="review-info">
+          <img class="user-photo-small" src="<%= favorite.get("user_photo_url") %>">
+          <%= favorite.escape('username') %>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div></span>
