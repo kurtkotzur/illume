@@ -390,12 +390,14 @@ a.opaque:hover {
 .location-favorite-show-container {
   height: 75px;
   width: 200px;
-  float: right;
+  float: left;
 }
 
 .favorite-header {
-  margin-top: -0px;
-  margin-left: -75px;
+  display: block;
+  float: left;
+//  margin-top: -0px;
+//  margin-left: -75px;
 }
 
 .category-col {

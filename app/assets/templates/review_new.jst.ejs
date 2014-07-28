@@ -1,36 +1,32 @@
-<div class="row">
-  <div class="col-xs-8">
-    <div class="panel panel-default hoverable">
-      <div class="panel-heading">Add a review</div>
-      <form class="panel-body">
-        <input type="hidden" name="review[location_id]" value="<%= location.get('id') %>">
-  
-        <div class="new-star-rating">
-            <button type="button" class="btn btn-default btn-xs star" id="1">
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs star" id="2">
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs star" id="3">
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs star" id="4">
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs star" id="5">
-              <span class="glyphicon glyphicon-heart"></span>
-            </button>
-        </div>
-  
-        <div class="form-group">
-          <label for="review-body"></label>
-          <textarea class="form-control" name="review[body]" rows="6" autofocus="true"></textarea>
-        </div>
-  
-        <button class="btn btn-sm btn-success">Submit</button>
-  
-      </form>
+<div class="panel panel-default hoverable">
+  <div class="panel-heading">Add a review</div>
+  <form class="panel-body">
+    <input type="hidden" name="review[location_id]" value="<%= location.get('id') %>">
+
+    <div class="new-star-rating">
+        <button type="button" class="btn btn-default btn-xs star" id="1">
+          <span class="glyphicon glyphicon-heart"></span>
+        </button
+        ><button type="button" class="btn btn-default btn-xs star" id="2">
+          <span class="glyphicon glyphicon-heart"></span>
+        </button
+        ><button type="button" class="btn btn-default btn-xs star" id="3">
+          <span class="glyphicon glyphicon-heart"></span>
+        </button
+        ><button type="button" class="btn btn-default btn-xs star" id="4">
+          <span class="glyphicon glyphicon-heart"></span>
+        </button
+        ><button type="button" class="btn btn-default btn-xs star" id="5">
+          <span class="glyphicon glyphicon-heart"></span>
+        </button>
     </div>
-  </div>
+
+    <div class="form-group">
+      <label for="review-body"></label>
+      <textarea class="form-control" name="review[body]" rows="6" autofocus="true"></textarea>
+    </div>
+
+    <button class="btn btn-sm btn-success">Submit</button>
+
+  </form>
 </div>
