@@ -154,8 +154,8 @@ li.average-stars {
 }
 
 img.logo-image {
-  height: 40px;
-  margin-top: -10px;
+  height: 35px;
+  margin-top: -5px;
   margin-left: -5px;
 }
 
@@ -272,14 +272,12 @@ h2.username {
   display: block;
   max-height: 75px;
   margin: auto;
-//  margin-left: auto;
-//  margin-right: auto;
-//  margin-top: 45px;
 }
 
 .brand-image {
+  margin-top: 5px;
   margin-left: 0px;
-  height: 30px;
+  height: 25px;
 }
 
 .location-index-show, .location-favorite-show-container {
@@ -347,10 +345,8 @@ a:hover {
 }
 
 .index-caption {
-//  margin-top: 10px;
   font-size: 1.2em;
   font-family: "Optima", Helvetica, Arial, sans-serif;
-//  display: block;
   margin: 10px auto;
 }
 
@@ -408,4 +404,31 @@ a.opaque:hover {
 
 .category-grid, .category-grid-header {
   margin-left: 20px;
+}
+
+.category-grid-header {
+  margin-top: 20px;
+}
+
+.location-index-caption {
+//  font-size: 1.1elm;
+//  font-family: "Optima", Helvetica, Arial, sans-serif;
+  margin-bottom: -18px;
+  margin-left: -5px;
+}
+
+.photo-thumbnail-small {
+  width: 250px;
+  margin: 10px;
+  margin-top: 0px;
+}
+
+div.thumbnail.thumbnail-small {
+  width: 260px;
+  float: left;
+  margin: 10px;
+}
+
+.small-caption {
+  margin-top: -10px;
 }

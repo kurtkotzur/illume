@@ -26,7 +26,9 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
       YelpClone.Collections.locations.fetch();
     }
     var location = new YelpClone.Models.Location();
+    var parsedCategory = parsedCategory || "Location";
     var locationsIndexView = new YelpClone.Views.LocationsIndex({
+      category: parsedCategory,
       model: location,
       collection: YelpClone.Collections.locations
     });

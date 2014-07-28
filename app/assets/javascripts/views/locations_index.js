@@ -6,14 +6,10 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     "change input.picture-upload": "upload_picture"
   },
   
-  initialize: function () {
-    this.listenTo(this.collection, "sync", this.synced);
+  initialize: function (options) {
+    this.category = options.category;
     this.listenTo(this.collection, "add", this.addLocation);
     this.collection.each(this.addLocation.bind(this));
-  },
-  synced: function(){
-    console.log('collection synced');
-    this.render();
   },
   
   addLocation: function (location) {
@@ -22,7 +18,8 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   },
   
   render: function () {
-    var renderedContent = this.template();
+    var renderedContent = this.template({ category: this.category });
+    
     this.$el.html(renderedContent);
     this.attachSubviews();
     return this;

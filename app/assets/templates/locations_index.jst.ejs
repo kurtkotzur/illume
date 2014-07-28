@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">New location</h4>
+        <h4 class="modal-title" id="myModalLabel">New <%= category.toLowerCase() %></h4>
       </div>
       <div class="modal-body">
         <form>
@@ -134,8 +134,8 @@
 </div>
 
 <span class="pull-right">
-  <button class="btn btn-success add-review" data-toggle="modal" data-target="#newLocationModal">Add location</button>
+  <button class="btn btn-success add-review" data-toggle="modal" data-target="#newLocationModal">Add <%= category.toLowerCase() %></button>
 </span>
 
-<h2>Locations</h2>
+<h2><%= category %>s</h2>
 <div class="locations"></div>
