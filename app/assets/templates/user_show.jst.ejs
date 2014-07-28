@@ -1,14 +1,35 @@
 <div class="row">
-  <div class="col-xs-8">
-    <div class="panel panel-default user-container clearfix hoverable">
-      <h2 class="username"><%= user.escape("username") %></h2>
-      <img src="<%= user.get('photo_url') %>" class="img-responsive">
-      <ul class="user-info">
-        <li><strong>Location</strong></li>
-        <li><%= user.escape("city") %>, <%= user.escape("state") %></li>
-        <li><strong>illuming since</strong></li>
-        <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
-      </ul>
+  <div class="col-xs-8 col-xs-offset-1">
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#info" role="tab" data-toggle="tab">Info</a></li>
+      <li><a href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
+      <li><a href="#favorites" role="tab" data-toggle="tab">Favorites</a></li>
+    </ul>
+    
+    <div class="tab-content">
+      <div class="tab-pane active" id="info">
+        
+        <div class="panel panel-default user-container clearfix hoverable">
+          <h2 class="username"><%= user.escape("username") %></h2>
+          <img src="<%= user.get('photo_url') %>" class="img-responsive">
+          <ul class="user-info">
+            <li><strong>Location</strong></li>
+            <li><%= user.escape("city") %>, <%= user.escape("state") %></li>
+            <li><strong>illuming since</strong></li>
+            <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="tab-pane" id="reviews">
+        
+      </div>
+      
+      <div class="tab-pane" id="favorites">
+        
+      </div>
+      
     </div>
   </div>
 </div>

@@ -1,11 +1,11 @@
-YelpClone.Collections.Reviews = Backbone.Collection.extend({
-  model: YelpClone.Models.Review,
+YelpClone.Collections.Favorites = Backbone.Collection.extend({
+  model: YelpClone.Models.Favorite,
   
   url: function () {
     if (this.type === "location") {
-      return this.location.url() + "/reviews";
+      return this.location.url() + "/favorites";
     } else if (this.type === "user") {
-      return "/api" + this.user.url() + "/reviews";
+      return "/api" + this.user.url() + "/favorites";
     }
   },
   

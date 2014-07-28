@@ -6,7 +6,18 @@ YelpClone.Models.Review = Backbone.Model.extend({
       this.user().set(payload.user);
       delete payload.user;
     }
+    if (payload.location) {
+      this.location().set(payload.location);
+      delete payload.location;
+    }
     return payload;
+  },
+  
+  location: function () {
+    if(!this._location) {
+      this._location = new YelpClone.Models.Location();
+    }
+    return this._location;
   },
   
   user: function() {

@@ -3,7 +3,6 @@ YelpClone.Views.LocationShow = Backbone.CompositeView.extend({
   
   initialize: function () {
     this.listenTo(this.model.reviews(), "add", this.addReview);
-    
     var reviewNewView = new YelpClone.Views.ReviewNew({ model: this.model });
     this.addSubview(".review-new", reviewNewView);
     
@@ -20,8 +19,7 @@ YelpClone.Views.LocationShow = Backbone.CompositeView.extend({
     subview.delegateEvents();
   },
   
-  render: function () {
-    
+  render: function () { 
     var renderedContent = this.template({ location: this.model });
     this.$el.html(renderedContent);
     this.attachSubviews();
