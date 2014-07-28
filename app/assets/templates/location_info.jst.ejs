@@ -1,54 +1,54 @@
-<!-- <div class="row">
-  <div class="col-xs-8"> -->
-    <div class="panel panel-default location-info-container clearfix hoverable">
-    <button class="btn btn-success add-favorite" type="buton" data-id="<%= location.escape('id') %>">
+<div class="panel panel-default location-info-container clearfix hoverable">
+  <button class="btn btn-success toggle-favorite" type="button" data-id="<%= location.escape('id') %>">
+    <% if (location.favorites().get({ "id": YelpClone.currentUserId})) { %>
+      Unfavorite
+    <% } else { %>
       <span class="glyphicon glyphicon-star"></span> Favorite
-    </button>
-    <div class="location-left-col">
-    <h2><%= location.escape("name") %></h2>
+    <% } %>
+  </button>
+  <div class="location-left-col">
+  <h2><%= location.escape("name") %></h2>
 
-    <ul class="location-info">
-      <li class="average-stars">
-        <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1" disabled>
-          <span class="glyphicon glyphicon-heart"></span>
-        </button
-        ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2" disabled>
-          <span class="glyphicon glyphicon-heart"></span>
-        </button
-        ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3" disabled>
-          <span class="glyphicon glyphicon-heart"></span>
-        </button
-        ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4" disabled>
-          <span class="glyphicon glyphicon-heart"></span>
-        </button
-        ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
-          <span class="glyphicon glyphicon-heart"></span>
-        </button
-        > <%= location.reviews().length %> Reviews
-      </li>
-      <li><%= location.escape("category") %></li>
-      <li><%= location.escape("address") %></li>
+  <ul class="location-info">
+    <li class="average-stars">
+      <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1" disabled>
+        <span class="glyphicon glyphicon-heart"></span>
+      </button
+      ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2" disabled>
+        <span class="glyphicon glyphicon-heart"></span>
+      </button
+      ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3" disabled>
+        <span class="glyphicon glyphicon-heart"></span>
+      </button
+      ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4" disabled>
+        <span class="glyphicon glyphicon-heart"></span>
+      </button
+      ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
+        <span class="glyphicon glyphicon-heart"></span>
+      </button
+      > <%= location.reviews().length %> Reviews
+    </li>
+    <li><%= location.escape("category") %></li>
+    <li><%= location.escape("address") %></li>
+  </ul>
+
+  <div class="location-photo">
+    <img src="<%= location.get('photo_url') %>" class="img-responsive">
+  </div>
+  </div>
+  
+  <div class="location-right-col">
+    <ul class="more-location-info">
+      <li>Ambience  <b><%= location.escape("ambience") %></b></li>
+      <li>Attire  <b><%= location.escape("attire") %></b></li>
+      <li>Noise level  <b><%= location.escape("noise_level") %></b></li>
+      <li>Cleanness  <b><%= location.escape("cleanness") %></b></li>
+      <li>Wifi  <b><%= location.escape("wifi") ? 'Yes' : 'No' %></b></li>
+      <li>Good for kids  <b><%= location.escape("good_for_kids") ? 'Yes' : 'No' %></b></li>
+      <li>Good for groups  <b><%= location.escape("good_for_groups") ? 'Yes' : 'No' %></b></li>
+      <li>Wheelchair accessible  <b><%= location.escape("wheelchair_accessible") ? 'Yes' : 'No' %></b></li>
+      <li>Outdoor  <b><%= location.escape("outdoor") ? 'Yes' : 'No' %></b></li>
+      
     </ul>
-
-    <div class="location-photo">
-      <img src="<%= location.get('photo_url') %>" class="img-responsive">
-    </div>
-    </div>
-    
-    <div class="location-right-col">
-      <ul class="more-location-info">
-        <li>Ambience  <b><%= location.escape("ambience") %></b></li>
-        <li>Attire  <b><%= location.escape("attire") %></b></li>
-        <li>Noise level  <b><%= location.escape("noise_level") %></b></li>
-        <li>Cleanness  <b><%= location.escape("cleanness") %></b></li>
-        <li>Wifi  <b><%= location.escape("wifi") ? 'Yes' : 'No' %></b></li>
-        <li>Good for kids  <b><%= location.escape("good_for_kids") ? 'Yes' : 'No' %></b></li>
-        <li>Good for groups  <b><%= location.escape("good_for_groups") ? 'Yes' : 'No' %></b></li>
-        <li>Wheelchair accessible  <b><%= location.escape("wheelchair_accessible") ? 'Yes' : 'No' %></b></li>
-        <li>Outdoor  <b><%= location.escape("outdoor") ? 'Yes' : 'No' %></b></li>
-        
-      </ul>
-    </div>
-    </div>
-  <!-- </div>
-</div> -->
+  </div>
+</div>

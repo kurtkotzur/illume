@@ -2,7 +2,7 @@ YelpClone.Views.LocationInfo = Backbone.View.extend({
   template: JST["location_info"],
   
   events: {
-    "click button.add-favorite": "addFavorite"
+    "click button.toggle-favorite": "handleFavorite"
   },
   
   initialize: function () {
@@ -10,16 +10,20 @@ YelpClone.Views.LocationInfo = Backbone.View.extend({
     this.listenTo(this.model.reviews(), "all", this.render);
   },
   
-  addFavorite: function (event) {
+  handleFavorite: function (event) {
     event.preventDefault();
-    var params = { "favorite": { "location_id": $(event.currentTarget).data("id") } };
-    var favorite = new YelpClone.Models.Favorite(params);
-    var that =  this;
-    favorite.save({}, {
-      success: function () {
-        that.model.fetch();
-      }
-    });
+    if (this.model.favorites().get(YelpClone.currentUserId)) {
+      //...
+    } else {
+      var params = { "favorite": { "location_id": $(event.currentTarget).data("id") } };
+      var favorite = new YelpClone.Models.Favorite(params);
+      var that =  this;
+      favorite.save({}, {
+        success: function () {
+          that.model.fetch();
+        }
+      }); 
+    }
   },
   
   averageStars: function () {

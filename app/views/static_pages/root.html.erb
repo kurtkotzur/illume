@@ -1,4 +1,7 @@
 <div class="backdrop">
   <div id="main"></div>
 </div>
-<script>$(YelpClone.initialize());</script>
+<script>
+YelpClone.currentUserId = <%= current_user.id %>
+$(YelpClone.initialize);
+</script>

@@ -16,6 +16,7 @@ YelpClone.Views.LocationShow = Backbone.CompositeView.extend({
   },
   
   addFavorite: function (favorite) {
+    $(".favorite-header").removeClass("hidden")
     var subview = new YelpClone.Views.LocationFavoriteShow({ model: favorite });
     this.subviews(".favorites").push(subview);
     this.$(".favorites").prepend(subview.render().$el);
