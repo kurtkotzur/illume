@@ -1,20 +1,8 @@
-<div class="row">
-  <div class="col-xs-8">
-    <div class="panel panel-default user-review-container clearfix hoverable">
-      <div class="review-info">
-        <ul class="review-info-list">
-          <li>
-            <img class="user-photo-small" src="<%= favorite.get("location_photo_url") %>">
-          </li>
-          <li class="review-author">
-            <a href="#/locations/<%= favorite.get('id') %>"><%= favorite.escape('name') %></a>
-          </li>
-          <li><%= favorite.escape("address") %></li>
-        </ul>
-      </div>
-      <div class="review-body">
-        <!-- TODO: show average stars -->
-      </div>
+<a href="#/locations/<%= favorite.get('id') %>">
+  <div class="thumbnail location-index-show">
+    <img src="<%= favorite.get("location_photo_url") %>" class="photo-thumbnail">
+    <div class="caption index-caption">
+      <p><%= favorite.escape('name') %></p>
     </div>
   </div>
-</div>
+</a>

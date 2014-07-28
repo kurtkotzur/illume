@@ -378,10 +378,22 @@ a.opaque:hover {
 
 .user-container {
   margin-top: 10px;
+  padding: 20px;
 }
 
 .user-review-container {
   margin: 10px;
   padding: 10px;
   margin-left: 0px;
+}
+
+.location-favorite-show-container {
+  height: 75px;
+  width: 200px;
+  float: right;
+}
+
+.favorite-header {
+ margin-top: -0px;
+ margin-left: -75px;
 }

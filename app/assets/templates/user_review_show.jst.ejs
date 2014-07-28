@@ -1,39 +1,37 @@
 <div class="row">
-  <div class="col-xs-8">
-    <div class="panel panel-default user-review-container clearfix hoverable">
-      <div class="review-info">
-        <ul class="review-info-list">
-          <li>
-            <img class="user-photo-small" src="<%= review.get("location_photo_url") %>">
-          </li>
-          <li class="review-author">
-            <a href="#/locations/<%= review.location().get('id') %>"><%= review.location().escape('name') %></a>
-          </li>
-          <li><%= review.location().escape("address") %></li>
-        </ul>
+  <div class="panel panel-default user-review-container clearfix hoverable">
+    <div class="review-info">
+      <ul class="review-info-list">
+        <li>
+          <img class="user-photo-small" src="<%= review.get("location_photo_url") %>">
+        </li>
+        <li class="review-author">
+          <a href="#/locations/<%= review.location().get('id') %>"><%= review.location().escape('name') %></a>
+        </li>
+        <li><%= review.location().escape("category") %></li>
+      </ul>
+    </div>
+    <div class="review-body">
+      <div class="star-rating" data-review-id="<%= review.get('id') %>">
+          <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1" disabled>
+            <span class="glyphicon glyphicon-heart"></span>
+          </button
+          ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2" disabled>
+            <span class="glyphicon glyphicon-heart"></span>
+          </button
+          ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3" disabled>
+            <span class="glyphicon glyphicon-heart"></span>
+          </button
+          ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4" disabled>
+            <span class="glyphicon glyphicon-heart"></span>
+          </button
+          ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
+            <span class="glyphicon glyphicon-heart"></span>
+          </button>
+      </div><div class="review-date">
+        <%= moment(review.escape("created_at")).format("M/DD/YY") %>
       </div>
-      <div class="review-body">
-        <div class="star-rating" data-review-id="<%= review.get('id') %>">
-            <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1" disabled>
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2" disabled>
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3" disabled>
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4" disabled>
-              <span class="glyphicon glyphicon-heart"></span>
-            </button
-            ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
-              <span class="glyphicon glyphicon-heart"></span>
-            </button>
-        </div><div class="review-date">
-          <%= moment(review.escape("created_at")).format("M/DD/YY") %>
-        </div>
-        <p class="review-text"><%= review.escape("body") %></p>
-      </div>
+      <p class="review-text"><%= review.escape("body") %></p>
     </div>
   </div>
 </div>

@@ -1,20 +1,10 @@
-<div class="row">
+<span class="pull-right"><div class="row">
   <div class="col-xs-8">
-    <div class="panel panel-default">
+    <div class="panel panel-default location-favorite-show-container">
       <div class="review-info">
-        <ul class="review-info-list">
-          <li>
-            <img class="user-photo-small" src="<%= favorite.get("user_photo_url") %>">
-          </li>
-          <li class="review-author">
-            <a href="#/user/<%= favorite.get('id') %>"><%= favorite.escape('username') %></a>
-          </li>
-          <li><%= favorite.escape("city") %>, <%= favorite.escape("state") %></li>
-        </ul>
-      </div>
-      <div class="review-body">
-        <!-- TODO: show average stars -->
+        <img class="user-photo-small" src="<%= favorite.get("user_photo_url") %>">
+        <a href="#/users/<%= favorite.get('id') %>"><%= favorite.escape('username') %></a>
       </div>
     </div>
   </div>
-</div>
+</div></span>
