@@ -18,6 +18,8 @@ gem 'aws-sdk'
 gem 'figaro'
 gem 'kaminari'
 gem 'font-awesome-sass'
+gem 'gmaps4rails'
+gem 'geocoder'
 
 group :development do
   gem 'annotate'

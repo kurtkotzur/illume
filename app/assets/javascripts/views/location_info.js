@@ -12,8 +12,13 @@ YelpClone.Views.LocationInfo = Backbone.View.extend({
   
   handleFavorite: function (event) {
     event.preventDefault();
-    if (this.model.favorites().get(YelpClone.currentUserId)) {
-      //...
+    var that = this;
+    if (this.model.favoriteUsers().get(YelpClone.currentUserId)) {
+      var a = this.model.favorites().findWhere({
+        "user_id": YelpClone.currentUserId,
+        "location_id": that.model.id
+      }
+      a.destroy();
     } else {
       var params = { "favorite": { "location_id": $(event.currentTarget).data("id") } };
       var favorite = new YelpClone.Models.Favorite(params);

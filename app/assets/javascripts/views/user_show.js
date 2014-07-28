@@ -4,7 +4,7 @@ YelpClone.Views.UserShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.model.reviews().each(this.addReview.bind(this));
-    this.listenTo(this.model.reviews(), "add", this.addReview); //necessary!!
+    this.listenTo(this.model.reviews(), "add", this.addReview);
     
     this.model.favorites().each(this.addFavorite.bind(this));
     this.listenTo(this.model.favorites(), "add", this.addFavorite);

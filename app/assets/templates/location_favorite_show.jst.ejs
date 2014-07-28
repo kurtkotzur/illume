@@ -1,8 +1,8 @@
-<a href="#/users/<%= favorite.get('id') %>">
+<a href="#/users/<%= favoriteUser.get('id') %>">
   <div class="panel panel-default location-favorite-show-container">
     <div class="review-info">
-      <img class="user-photo-small" src="<%= favorite.get("user_photo_url") %>">
-      <%= favorite.escape('username') %>
+      <img class="user-photo-small" src="<%= favoriteUser.get("user_photo_url") %>">
+      <%= favoriteUser.escape('username') %>
     </div>
   </div>
 </a>

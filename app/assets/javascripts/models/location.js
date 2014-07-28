@@ -3,9 +3,14 @@ YelpClone.Models.Location = Backbone.Model.extend({
   
   favorites: function () {
     this._favorites = this._favorites || new YelpClone.Collections.Favorites(
-      [], { user: this, type: "location" }
+      [], { location: this, type: "location" }
     );
     return this._favorites;
+  },
+  
+  favoriteUsers: function () {
+    this._favoriteUsers = this._favoriteUsers || new YelpClone.Collections.Users();
+    return this._favoriteUsers;
   },
   
   reviews: function () {
@@ -19,6 +24,10 @@ YelpClone.Models.Location = Backbone.Model.extend({
     if (payload.favorites) {
       this.favorites().set(payload.favorites, { parse: true });
       delete payload.favorites;
+    }
+    if (payload.favorite_users) {
+      this.favoriteUsers().set(payload.favorite_users, { parse: true });
+      delete payload.favorite_users;
     }
     if (payload.reviews) {
       this.reviews().set(payload.reviews, { parse: true });

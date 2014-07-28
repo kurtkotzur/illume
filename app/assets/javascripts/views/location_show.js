@@ -11,15 +11,14 @@ YelpClone.Views.LocationShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.reviews(), "add", this.addReview);
     this.model.reviews().each(this.addReview.bind(this));
     
-    this.listenTo(this.model.favorites(), "add", this.addFavorite);
-    this.model.favorites().each(this.addFavorite.bind(this));
+    this.listenTo(this.model.favoriteUsers(), "add", this.addFavoriteUser);
+    this.model.favoriteUsers().each(this.addFavoriteUser.bind(this));
   },
   
-  addFavorite: function (favorite) {
-    $(".favorite-header").removeClass("hidden")
-    var subview = new YelpClone.Views.LocationFavoriteShow({ model: favorite });
-    this.subviews(".favorites").push(subview);
-    this.$(".favorites").prepend(subview.render().$el);
+  addFavoriteUser: function (favoriteUser) {
+    var subview = new YelpClone.Views.LocationFavoriteShow({ model: favoriteUser });
+    this.subviews(".favorite_users").push(subview);
+    this.$(".favorite_users").prepend(subview.render().$el);
     subview.delegateEvents();
   },
   

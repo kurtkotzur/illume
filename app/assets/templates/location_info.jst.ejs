@@ -1,6 +1,6 @@
 <div class="panel panel-default location-info-container clearfix hoverable">
   <button class="btn btn-success toggle-favorite" type="button" data-id="<%= location.escape('id') %>">
-    <% if (location.favorites().get({ "id": YelpClone.currentUserId})) { %>
+    <% if (location.favoriteUsers().get({ "id": YelpClone.currentUserId})) { %>
       Unfavorite
     <% } else { %>
       <span class="glyphicon glyphicon-star"></span> Favorite
