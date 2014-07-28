@@ -6,7 +6,7 @@
           <img class="user-photo-small" src="<%= review.get("location_photo_url") %>">
         </li>
         <li class="review-author">
-          <a href="#/locations/<%= review.location().get('id') %>"><%= review.location().escape('name') %></a>
+          <a href="#/location/<%= review.location().get('id') %>"><%= review.location().escape('name') %></a>
         </li>
         <li><%= review.location().escape("category") %></li>
       </ul>

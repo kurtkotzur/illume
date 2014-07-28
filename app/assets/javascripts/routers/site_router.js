@@ -4,9 +4,9 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
   },
   
   routes: {
-    "locations": "locationsIndex",
+    "locations(/:category)": "locationsIndex",
     "locations/new": "locationNew",
-    "locations/:id": "locationShow",
+    "location/:id": "locationShow",
     "users/:id": "userShow",
     "": "categoryIndex"
   },
@@ -16,7 +16,15 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     this._swapView(categoryIndexView);
   },
   
-  locationsIndex: function () {
+  locationsIndex: function (category) {
+    if (category) {
+      var parsedCategory = category.replace(/_/g, ' ');
+      YelpClone.Collections.locations.fetch({
+        data: { category: parsedCategory }
+      });
+    } else {
+      YelpClone.Collections.locations.fetch();
+    }
     var location = new YelpClone.Models.Location();
     var locationsIndexView = new YelpClone.Views.LocationsIndex({
       model: location,

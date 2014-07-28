@@ -10,7 +10,12 @@ YelpClone.Views.CategoryIndex = Backbone.View.extend({
     YelpClone.Collections.locations.fetch({
       data: { category: category },
       success: function () {
-        Backbone.history.navigate("#/locations");
+        if (category) {
+          var parsedCategory = category.replace(/ /g,"_");
+          Backbone.history.navigate("#/locations/" + parsedCategory);
+        } else {
+          Backbone.history.navigate("#/locations");
+        }
       }
     });
   },
