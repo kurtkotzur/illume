@@ -45,8 +45,7 @@ YelpClone.Views.ReviewNew = Backbone.View.extend({
     
     for (var i = 1; i < 6; i++) {
       var $currentStar = $("#" + i);
-      $currentStar.removeClass("star");
-      $currentStar.addClass("static-star");
+      $currentStar.toggleClass("star static-star")
     }
     
     var newClass = "stars-selected-" + this._numStars;
@@ -71,7 +70,7 @@ YelpClone.Views.ReviewNew = Backbone.View.extend({
     var that = this;
     review.save({}, {
       success: function () {
-        that.model.reviews().add(review);
+        that.model.fetch();
         that.render();
       }
     });

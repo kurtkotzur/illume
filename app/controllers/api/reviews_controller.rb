@@ -6,7 +6,7 @@ module Api
       
       if @review.save
         @review.location.update_stars!
-        render json: @review, include: [:user]
+        render "create.json.jbuilder"
       else
         render json: @review.errors.full_messages, status: :unprocessable_entity
       end

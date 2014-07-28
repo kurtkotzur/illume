@@ -407,7 +407,8 @@ a.opaque:hover {
 }
 
 .category-grid-header {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .location-index-caption {
@@ -431,4 +432,12 @@ div.thumbnail.thumbnail-small {
 
 .small-caption {
   margin-top: -10px;
+}
+
+.location-index-header {
+  margin-left: 0px;
+}
+
+.add-location {
+  margin-top: 25px;
 }
