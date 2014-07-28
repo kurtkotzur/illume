@@ -256,10 +256,12 @@ h2.username {
 }
 
 .category-icon-container {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   border-style: solid;
   transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .category-icon-container:hover {
@@ -268,11 +270,11 @@ h2.username {
 
 .category-icon {
   display: block;
-  max-height: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: middle;
-  margin-top: 60px;
+  max-height: 75px;
+  margin: auto;
+//  margin-left: auto;
+//  margin-right: auto;
+//  margin-top: 45px;
 }
 
 .brand-image {
@@ -345,14 +347,16 @@ a:hover {
 }
 
 .index-caption {
-  padding: 0px !important;
-  margin-top: 10px;
-  margin-bottom: -10px;
+//  margin-top: 10px;
+  font-size: 1.2em;
+  font-family: "Optima", Helvetica, Arial, sans-serif;
+//  display: block;
+  margin: 10px auto;
 }
 
 .middle-cat {
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .sign-up-container {
@@ -394,6 +398,14 @@ a.opaque:hover {
 }
 
 .favorite-header {
- margin-top: -0px;
- margin-left: -75px;
+  margin-top: -0px;
+  margin-left: -75px;
+}
+
+.category-col {
+  margin-right: 55px;
+}
+
+.category-grid, .category-grid-header {
+  margin-left: 20px;
 }
