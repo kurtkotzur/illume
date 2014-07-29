@@ -2,7 +2,7 @@ YelpClone.Views.LocationFavoriteShow = Backbone.View.extend({
   template: JST["location_favorite_show"],
   
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.favorites(), "remove", this.render);
   },
   
   render: function () {
