@@ -19,5 +19,7 @@ json.favorites user.favorite_locations do |location|
   json.average_stars location.average_stars
   json.location_photo_url location.location_photo.url
   json.num_reviews location.reviews.count
+  json.latitude location.latitude
+  json.longitude location.longitude
 end
 json.photo_url user.user_photo.url
