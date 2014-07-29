@@ -3,11 +3,14 @@
 <head>
   <title>illume</title>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["MAPS_API_KEY"]%>"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'logo.png' %>
+  
 </head>
 <body>
   <div id="wrap">
