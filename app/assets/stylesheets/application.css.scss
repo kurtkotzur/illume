@@ -280,11 +280,11 @@ h2.username {
   height: 25px;
 }
 
-.location-index-show, .location-favorite-show-container {
+.location-index-show {
   transition: box-shadow 0.3s ease;
 }
 
-.location-index-show:hover, .location-favorite-show-container:hover {
+.location-index-show:hover {
   box-shadow: 0px 0px 30px dimgray;
 }
 
@@ -442,4 +442,12 @@ div.thumbnail.thumbnail-small {
 
 .add-location {
   margin-top: 25px;
+}
+
+.location-favorite-show-container, .user-favorite-show-container {
+  transition: box-shadow 0.3s ease;
+}
+
+.location-favorite-show-container:hover, .user-favorite-show-container:hover {
+  box-shadow: 0px 0px 15px dimgray;
 }

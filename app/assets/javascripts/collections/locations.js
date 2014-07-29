@@ -9,7 +9,7 @@ YelpClone.Collections.Locations = Backbone.Collection.extend({
     var location;
     if (!(location = this.get(id))) {
       location = new YelpClone.Models.Location({ id: id });
-      locations.fetch({
+      location.fetch({
         sucess: function () { locations.add(location); }
       });
     }

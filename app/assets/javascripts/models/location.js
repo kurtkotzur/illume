@@ -1,6 +1,17 @@
 YelpClone.Models.Location = Backbone.Model.extend({
   urlRoot: "api/locations",
   
+  initialize: function () {
+    this.listenTo(this.favorites(), "remove", this.removeFavoriteUser)
+  },
+  
+  removeFavoriteUser: function (favorite) {
+    var userToDelete = this.favoriteUsers().findWhere({
+      id: favorite.get("user_id")
+    });
+    this.favoriteUsers().remove(userToDelete);
+  },
+  
   favorites: function () {
     this._favorites = this._favorites || new YelpClone.Collections.Favorites(
       [], { location: this, type: "location" }

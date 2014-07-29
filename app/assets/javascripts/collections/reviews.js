@@ -16,5 +16,7 @@ YelpClone.Collections.Reviews = Backbone.Collection.extend({
     } else if (this.type === "user") {
       this.user = options.user;
     }
-  }
+  },
+  
+  comparator: "created_at"
 });

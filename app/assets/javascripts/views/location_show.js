@@ -9,10 +9,19 @@ YelpClone.Views.LocationShow = Backbone.CompositeView.extend({
     this.addSubview(".location-info", locationInfoView);
     
     this.listenTo(this.model.reviews(), "add", this.addReview);
-    this.model.reviews().each(this.addReview.bind(this));
+    this.model.reviews().models.reverse().forEach(this.addReview.bind(this));
     
     this.listenTo(this.model.favoriteUsers(), "add", this.addFavoriteUser);
     this.model.favoriteUsers().each(this.addFavoriteUser.bind(this));
+    
+    this.listenTo(this.model.favoriteUsers(), "remove", this.removeFavoriteUser);
+  },
+  
+  removeFavoriteUser: function (favoriteUser) {
+    var subviewToRemove = _(this.subviews(".favorite_users")).findWhere({
+      model: favoriteUser
+    });
+    this.removeSubview(".favorite_users", subviewToRemove);
   },
   
   addFavoriteUser: function (favoriteUser) {
