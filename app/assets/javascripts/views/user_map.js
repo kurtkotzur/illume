@@ -20,7 +20,7 @@ YelpClone.Views.UserMap = Backbone.View.extend({
   },
   
   render: function () {
-    window.setTimeout(this.mapInitialize(), 10000);
+    window.setTimeout(this.mapInitialize.bind(this), 10);
     
     return this;
   }
