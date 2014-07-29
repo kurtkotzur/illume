@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
   
+  geocoded_by :complete_address
+  after_validation :geocode
+  
   has_attached_file :user_photo, styles: {
     big: "500x500",
     small: "250x250"
@@ -54,6 +57,10 @@ class User < ActiveRecord::Base
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
+  end
+
+  def complete_address
+    "#{self.address}, #{self.city}, #{self.state} #{self.zip}"
   end
 
   def is_password?(unencrypted_password)

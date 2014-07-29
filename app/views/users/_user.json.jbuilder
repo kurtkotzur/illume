@@ -1,4 +1,4 @@
-json.(user, :username, :created_at, :address, :city, :state, :zip)
+json.(user, :username, :created_at, :address, :city, :state, :zip, :latitude, :longitude)
 json.reviews user.reviews do |review|
   json.id review.id
   json.user_id review.user_id

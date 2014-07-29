@@ -19,6 +19,9 @@
 class Location < ActiveRecord::Base
   validates :name, :category, :address, presence: true
   
+  geocoded_by :address
+  after_validation :geocode
+  
   has_attached_file :location_photo, styles: {
     big: "500x500",
     small: "250x250"

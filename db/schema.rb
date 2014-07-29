@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727204214) do
+ActiveRecord::Schema.define(version: 20140729184358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20140727204214) do
     t.boolean  "good_for_kids",               default: false
     t.boolean  "good_for_groups",             default: false
     t.boolean  "outdoor",                     default: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "reviews", force: true do |t|
@@ -75,6 +77,8 @@ ActiveRecord::Schema.define(version: 20140727204214) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
