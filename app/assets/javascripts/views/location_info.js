@@ -49,11 +49,11 @@ YelpClone.Views.LocationInfo = Backbone.View.extend({
       starsToEdit.push($currentStar);
       i++;
     }
-    if (this.averageStars() % 1 === 0.5) {
-      $currentStar = $currentStars.find("[data-star-id='" + String(i) + "']");
-      starsToEdit.push($currentStar);
-      $currentStar.addClass("half-star")
-    }
+    // if (this.averageStars() % 1 === 0.5) {
+//       $currentStar = $currentStars.find("[data-star-id='" + String(i) + "']");
+//       starsToEdit.push($currentStar);
+//       $currentStar.addClass("half-star")
+//     }
     
     var that = this;
     starsToEdit.forEach( function (star) {

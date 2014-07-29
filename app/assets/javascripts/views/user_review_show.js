@@ -2,7 +2,7 @@ YelpClone.Views.UserReviewShow = Backbone.View.extend({
   template: JST["user_review_show"],
   
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render)
+    this.listenTo(this.model, "sync", this.render);
   },
   
   ratingClass: function () {
@@ -19,7 +19,7 @@ YelpClone.Views.UserReviewShow = Backbone.View.extend({
     var starsToEdit = [];
     var i = 1;
     while (starsToEdit.length < this.model.get("num_stars")) {
-      $currentStar = $currentStars.find("[data-star-id='" + String(i) + "']");
+      var $currentStar = $currentStars.find("[data-star-id='" + String(i) + "']");
       starsToEdit.push($currentStar);
       i++;
     }
@@ -31,4 +31,4 @@ YelpClone.Views.UserReviewShow = Backbone.View.extend({
     
     return this;
   }
-})
+});

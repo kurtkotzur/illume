@@ -2,6 +2,25 @@
   <div class="thumbnail thumbnail-small user-favorite-show-container">
     <img src="<%= favorite.get("location_photo_url") %>" class="photo-thumbnail-small">
     <div class="caption location-index-caption small-caption">
+      <p>
+        
+        <div class="average-stars">
+              <button type="button" class="btn btn-default btn-xs static-star" data-star-id="1" disabled>
+                <span class="glyphicon glyphicon-heart"></span>
+              </button
+              ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="2" disabled>
+                <span class="glyphicon glyphicon-heart"></span>
+              </button
+              ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="3" disabled>
+                <span class="glyphicon glyphicon-heart"></span>
+              </button
+              ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="4" disabled>
+                <span class="glyphicon glyphicon-heart"></span>
+              </button
+              ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
+                <span class="glyphicon glyphicon-heart"></span>
+              </button>
+               <%= favorite.escape('num_reviews') %> Reviews</div></p>
       <p><%= favorite.escape('name') %></p>
     </div>
   </div>
