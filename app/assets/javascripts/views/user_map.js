@@ -1,11 +1,12 @@
+/*global YelpClone, google, JST */
 YelpClone.Views.UserMap = Backbone.View.extend({
   id: "user-map-canvas",
   
   template: JST["user_map"],
   
-  events: {
-    "click a#reviews-tab": "showReviewMarkers",
-    "click a#favorites-tab": "showFavoriteMarkers"
+  initialize: function () {
+    this.listenTo(this, "showReviews", this.showReviewMarkers.bind(this));
+    this.listenTo(this, "showFavorites", this.showFavoriteMarkers.bind(this));
   },
   
   mapInitialize: function () {
@@ -15,14 +16,13 @@ YelpClone.Views.UserMap = Backbone.View.extend({
       center: userPosition,
       zoom: 13
     };
-    var map = new google.maps.Map(this.$el[0],
-        mapOptions);
+    this.map = new google.maps.Map(this.$el[0], mapOptions);
     
-    this.showFavoriteMarkers(map);
+    this.showFavoriteMarkers.bind(this);
 
   },
   
-  showFavoriteMarkers: function (map) {
+  showFavoriteMarkers: function () {
     _(this.markers).each( function (marker) {
       marker.setMap(null);
     });
@@ -39,21 +39,22 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         }, (i + 1) * 200);
       }
     }
-
+    
     function addMarker () {
       var favorite = that.model.favorites().models[iterator];
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(favorite.get("latitude"), favorite.get("longitude")),
-        map: map,
+        map: that.map,
         animation: google.maps.Animation.DROP
       });
-      this.markers.push(marker);
+      debugger
+      that.markers.push(marker);
       var infoWindow = new google.maps.InfoWindow({
         content: that.template({ location: favorite })
       });
-      infoWindows.push(infoWindow);
+      that.infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {
-        infoWindow.open(map, marker);
+        infoWindow.open(that.map, marker);
       });
       iterator++;
     }
@@ -61,12 +62,11 @@ YelpClone.Views.UserMap = Backbone.View.extend({
     drop();
   },
   
-  showReviewMarkers: function (map) {
-    alert("hello")
+  showReviewMarkers: function () {
     _(this.markers).each( function (marker) {
       marker.setMap(null);
     });
-    this.markers = []
+    this.markers = [];
     this.infoWindows = [];
     
     var iterator = 0;
@@ -79,22 +79,22 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         }, (i + 1) * 200);
       }
     }
-    
+    // debugger
     function addMarker () {
       var review = that.model.reviews().models[iterator];
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(review.get("latitude"), review.get("longitude")),
-        map: map,
+        map: that.map,
         animation: google.maps.Animation.DROP
       });
-      this.markers.push(marker);
-      var infoWindow = new google.maps.InfoWindow({
-        content: that.template({ location: review })
-      });
-      this.infoWindows.push(infoWindow);
-      google.maps.event.addListener(marker, "click", function () {
-        infoWindow.open(map, marker);
-      });
+      that.markers.push(marker);
+      // var infoWindow = new google.maps.InfoWindow({
+//         content: that.template({ location: review })
+//       });
+//       this.infoWindows.push(infoWindow);
+//       google.maps.event.addListener(marker, "click", function () {
+//         infoWindow.open(map, marker);
+//       });
       iterator++;
     }
     
