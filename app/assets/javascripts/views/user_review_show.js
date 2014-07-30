@@ -7,6 +7,19 @@ YelpClone.Views.UserReviewShow = Backbone.View.extend({
     this.listenTo(this.model, 'highlight-off', this.highlightOff)
   },
   
+  events: {
+    "mouseenter .user-review-container": "handleMouseEnter",
+    "mouseleave .user-review-container": "handleMouseLeave"
+  },
+  
+  handleMouseEnter: function () {
+    this.model.trigger("mouseEnter", this.model);
+  },
+  
+  handleMouseLeave: function () {
+    this.model.trigger("mouseLeave", this.model);
+  },
+  
   highlightOn: function () {
     this.$el.find(".user-review-container").addClass("highlighted");
   },

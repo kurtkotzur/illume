@@ -7,6 +7,19 @@ YelpClone.Views.UserFavoriteShow = Backbone.View.extend({
     this.listenTo(this.model, 'highlight-off', this.highlightOff)
   },
   
+  events: {
+    "mouseenter .user-favorite-show-container": "handleMouseEnter",
+    "mouseleave .user-favorite-show-container": "handleMouseLeave"
+  },
+  
+  handleMouseEnter: function () {
+    this.model.trigger("mouseEnter", this.model);
+  },
+  
+  handleMouseLeave: function () {
+    this.model.trigger("mouseLeave", this.model);
+  },
+  
   averageStars: function () {
     return Math.round(this.model.get("average_stars") * 2) / 2;
   },

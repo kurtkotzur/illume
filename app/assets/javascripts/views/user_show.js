@@ -11,6 +11,28 @@ YelpClone.Views.UserShow = Backbone.CompositeView.extend({
     
     this.userMapView = new YelpClone.Views.UserMap({ model: this.model });
     this.addSubview(".user-map", this.userMapView);
+    
+    this.listenTo(this.model.reviews(), "mouseEnter", this.bounceReview);
+    this.listenTo(this.model.reviews(), "mouseLeave", this.unbounceReview);
+    
+    this.listenTo(this.model.favorites(), "mouseEnter", this.bounceFavorite);
+    this.listenTo(this.model.favorites(), "mouseLeave", this.unbounceFavorite);
+  },
+  
+  bounceReview: function (review) {
+    this.userMapView.markers[review.get("id")].setAnimation(google.maps.Animation.BOUNCE);
+  },
+  
+  unbounceReview: function (review) {
+    this.userMapView.markers[review.get("id")].setAnimation(null);
+  },
+  
+  bounceFavorite: function(favorite) {
+    this.userMapView.markers[favorite.get("id")].setAnimation(google.maps.Animation.BOUNCE);
+  },
+  
+  unbounceFavorite: function(favorite) {
+    this.userMapView.markers[favorite.get("id")].setAnimation(null);
   },
   
   events: {

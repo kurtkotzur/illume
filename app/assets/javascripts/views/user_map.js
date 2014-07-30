@@ -26,10 +26,12 @@ YelpClone.Views.UserMap = Backbone.View.extend({
   },
   
   showUserMarker: function () {
-    _(this.markers).each( function (marker) {
-      marker.setMap(null);
-    });
-    this.markers = [];
+    for (var key in this.markers) {
+      if (this.markers.hasOwnProperty(key)) {
+        this.markers[key].setMap(null);
+      }
+    }
+    this.markers = {};
     this.infoWindows = [];
     
     var marker = new google.maps.Marker({
@@ -38,14 +40,16 @@ YelpClone.Views.UserMap = Backbone.View.extend({
       animation: google.maps.Animation.DROP
     })
     
-    this.markers.push(marker);
+    this.markers["1"] = marker;
   },
   
   showFavoriteMarkers: function () {
-    _(this.markers).each( function (marker) {
-      marker.setMap(null);
-    });
-    this.markers = [];
+    for (var key in this.markers) {
+      if (this.markers.hasOwnProperty(key)) {
+        this.markers[key].setMap(null);
+      }
+    }
+    this.markers = {};
     this.infoWindows = [];
     
     var iterator = 0;
@@ -66,11 +70,11 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         map: that.map,
         animation: google.maps.Animation.DROP
       });
-
-      that.markers.push(marker);
+      
+      that.markers[favorite.get("id")] = marker;
       var infoWindow = new google.maps.InfoWindow({
         content: that.favoriteTemplate({ location: favorite }),
-        maxWidth: 150
+        maxWidth: 140
       });
       that.infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {
@@ -87,10 +91,12 @@ YelpClone.Views.UserMap = Backbone.View.extend({
   },
   
   showReviewMarkers: function () {
-    _(this.markers).each( function (marker) {
-      marker.setMap(null);
-    });
-    this.markers = [];
+    for (var key in this.markers) {
+      if (this.markers.hasOwnProperty(key)) {
+        this.markers[key].setMap(null);
+      }
+    }
+    this.markers = {};
     this.infoWindows = [];
     
     var iterator = 0;
@@ -110,10 +116,11 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         map: that.map,
         animation: google.maps.Animation.DROP
       });
-      that.markers.push(marker);
+      
+      that.markers[review.get("id")] = marker;
       var infoWindow = new google.maps.InfoWindow({
         content: that.reviewTemplate({ review: review }),
-        maxWidth: 150
+        maxWidth: 140
       });
       that.infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {
@@ -122,10 +129,9 @@ YelpClone.Views.UserMap = Backbone.View.extend({
       });
       google.maps.event.addListener(infoWindow, "closeclick", function () {
         review.trigger("highlight-off");
-      })
+      });
       iterator++;
     }
-    
     drop();
   },
   
