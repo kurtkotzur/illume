@@ -19,7 +19,7 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
       for (var i = 0; i < that.collection.models.length; i++) {
         window.setTimeout(function () {
           addMarker();
-        }, (i + 1) * 200);
+        }, i * 200);
       }
     }
     

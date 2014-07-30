@@ -19,11 +19,15 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   },
   
   bounceLocation: function (location) {
-    this.indexMapView.locationMarkers[location.get("id")].setAnimation(google.maps.Animation.BOUNCE);
+    if (this.indexMapView.locationMarkers[location.get("id")]) {
+      this.indexMapView.locationMarkers[location.get("id")].setAnimation(google.maps.Animation.BOUNCE);
+    }
   },
   
   unbounceLocation: function (location) {
-    this.indexMapView.locationMarkers[location.get("id")].setAnimation(null);
+    if (this.indexMapView.locationMarkers[location.get("id")]) {
+      this.indexMapView.locationMarkers[location.get("id")].setAnimation(null);
+    }
   },
   
   addLocation: function (location) {
@@ -35,8 +39,12 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     var renderedContent = this.template({ category: this.category });
     this.$el.html(renderedContent);
     this.attachSubviews();
-
-    this.$el.find(".locations").gridalicious({animate: true});
+    var that = this;
+    window.setTimeout(that.$el.find(".locations").gridalicious({
+      selector: ".thumbnail",
+      animate: true,
+      gutter: 1
+    }), 10000);
     
     return this;
   },

@@ -59,7 +59,7 @@ YelpClone.Views.UserMap = Backbone.View.extend({
       for (var i = 0; i < that.model.favorites().models.length; i++) {
         window.setTimeout(function () {
           addMarker();
-        }, (i + 1) * 200);
+        }, i * 200);
       }
     }
     
@@ -106,7 +106,7 @@ YelpClone.Views.UserMap = Backbone.View.extend({
       for (var i = 0; i < that.model.reviews().models.length; i++) {
         window.setTimeout(function () {
           addMarker();
-        }, (i + 1) * 200);
+        }, i * 200);
       }
     }
     function addMarker () {
