@@ -36,16 +36,21 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   },
   
   render: function () {
+    var that = this;
+    function gridaliciousize() {
+      $(".hidden").removeClass("hidden");
+      that.$el.find(".locations").gridalicious({
+        selector: ".thumbnail",
+        animate: true,
+        gutter: 1
+      });
+    };
+    
     var renderedContent = this.template({ category: this.category });
     this.$el.html(renderedContent);
     this.attachSubviews();
-    var that = this;
-    window.setTimeout(that.$el.find(".locations").gridalicious({
-      selector: ".thumbnail",
-      animate: true,
-      gutter: 1
-    }), 10000);
     
+    window.setTimeout(gridaliciousize, 1);
     return this;
   },
   
