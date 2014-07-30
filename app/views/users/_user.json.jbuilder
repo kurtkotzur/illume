@@ -7,6 +7,8 @@ json.reviews user.reviews do |review|
   json.created_at review.created_at
   json.updated_at review.updated_at
   json.location_id review.location_id
+  json.latitude review.location.latitude
+  json.longitude review.location.longitude
   json.location review.location, :id, :name, :category, :address
   json.location_photo_url review.location.location_photo.url
 end

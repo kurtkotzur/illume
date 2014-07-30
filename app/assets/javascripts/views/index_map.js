@@ -1,5 +1,5 @@
 YelpClone.Views.IndexMap = Backbone.View.extend({
-  id: "map-canvas", //may have to change
+  id: "index-map-canvas",
   
   template: JST["index_map"],
   
@@ -32,7 +32,8 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
       });
       locationMarkers.push(marker);
       var infoWindow = new google.maps.InfoWindow({
-        content: that.template({ location: current })
+        content: that.template({ location: current }),
+        maxWidth: 150
       });
       infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {

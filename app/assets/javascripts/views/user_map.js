@@ -1,7 +1,12 @@
 YelpClone.Views.UserMap = Backbone.View.extend({
-  id: "map-canvas",
+  id: "user-map-canvas",
   
   template: JST["user_map"],
+  
+  events: {
+    "click a#reviews-tab": "showReviewMarkers",
+    "click a#favorites-tab": "showFavoriteMarkers"
+  },
   
   mapInitialize: function () {
     var userPosition = new google.maps.LatLng(this.model.get("latitude"), this.model.get("longitude"));
@@ -12,15 +17,18 @@ YelpClone.Views.UserMap = Backbone.View.extend({
     };
     var map = new google.maps.Map(this.$el[0],
         mapOptions);
-        
-    var userMarker = new google.maps.Marker({
-      position: userPosition,
-      map: map,
-      animation: google.maps.Animation.DROP
-    });
     
-    var favoriteMarkers = [];
-    var infoWindows = [];
+    this.showFavoriteMarkers(map);
+
+  },
+  
+  showFavoriteMarkers: function (map) {
+    _(this.markers).each( function (marker) {
+      marker.setMap(null);
+    });
+    this.markers = [];
+    this.infoWindows = [];
+    
     var iterator = 0;
     
     var that = this;
@@ -39,7 +47,7 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         map: map,
         animation: google.maps.Animation.DROP
       });
-      favoriteMarkers.push(marker);
+      this.markers.push(marker);
       var infoWindow = new google.maps.InfoWindow({
         content: that.template({ location: favorite })
       });
@@ -51,7 +59,46 @@ YelpClone.Views.UserMap = Backbone.View.extend({
     }
     
     drop();
-
+  },
+  
+  showReviewMarkers: function (map) {
+    alert("hello")
+    _(this.markers).each( function (marker) {
+      marker.setMap(null);
+    });
+    this.markers = []
+    this.infoWindows = [];
+    
+    var iterator = 0;
+    
+    var that = this;
+    function drop () {
+      for (var i = 0; i < that.model.reviews().models.length; i++) {
+        window.setTimeout(function () {
+          addMarker();
+        }, (i + 1) * 200);
+      }
+    }
+    
+    function addMarker () {
+      var review = that.model.reviews().models[iterator];
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(review.get("latitude"), review.get("longitude")),
+        map: map,
+        animation: google.maps.Animation.DROP
+      });
+      this.markers.push(marker);
+      var infoWindow = new google.maps.InfoWindow({
+        content: that.template({ location: review })
+      });
+      this.infoWindows.push(infoWindow);
+      google.maps.event.addListener(marker, "click", function () {
+        infoWindow.open(map, marker);
+      });
+      iterator++;
+    }
+    
+    drop();
   },
   
   render: function () {

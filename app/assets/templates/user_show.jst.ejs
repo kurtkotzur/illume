@@ -3,8 +3,8 @@
 
     <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#info" role="tab" data-toggle="tab">Info</a></li>
-      <li><a href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
-      <li><a href="#favorites" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-star"></span> Favorites</a></li>
+      <li><a id="reviews-tab" href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
+      <li><a id="favorites-tab" href="#favorites" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-star"></span> Favorites</a></li>
     </ul>
     
     <div class="tab-content">
@@ -16,10 +16,12 @@
           <ul class="user-info">
             <li><strong>Location</strong></li>
             <li><%= user.escape("city") %>, <%= user.escape("state") %></li>
-            <li class="li-space-before"><strong>illuming since</strong></li>
-            <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
             <li class="li-space-before"><strong>Total reviews</strong></li>
             <li><%= user.reviews().length %></li>
+            <li class="li-space-before"><strong>Favorited locations</strong></li>
+            <li><%= user.favorites().length %></li>
+            <li class="li-space-before"><strong>illuming since</strong></li>
+            <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
           </ul>
         </div>                                                          
       </div>

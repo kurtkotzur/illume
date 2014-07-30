@@ -454,7 +454,7 @@ div.thumbnail.thumbnail-small {
   box-shadow: 0px 0px 15px dimgray;
 }
 
-#map-canvas {
+#user-map-canvas {
   margin-top: 17px;
   height: 700px;
   width: 470px;
@@ -478,4 +478,11 @@ div.thumbnail.thumbnail-small {
 
 .location-index-show {
   width: 260px !important;
+}
+
+#index-map-canvas {
+  margin-top: 12px;
+  margin-left: -100px;
+  height: 700px;
+  width: 560px;
 }
