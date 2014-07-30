@@ -1,4 +1,5 @@
 <div class="row">
+  <a href="#/location/<%= review.location().get('id') %>">
   <div class="panel panel-default user-review-container clearfix hoverable">
     <div class="review-info">
       <ul class="review-info-list">
@@ -6,7 +7,7 @@
           <img class="user-photo-small" src="<%= review.get("location_photo_url") %>">
         </li>
         <li class="review-author">
-          <a href="#/location/<%= review.location().get('id') %>"><%= review.location().escape('name') %></a>
+          <%= review.location().escape('name') %>
         </li>
         <li><%= review.location().escape("category") %></li>
       </ul>
@@ -34,4 +35,5 @@
       <p class="review-text"><%= review.escape("body") %></p>
     </div>
   </div>
+  </a>
 </div>

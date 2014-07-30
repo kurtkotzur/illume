@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializeJSON
+//= require jquery.grid-a-licious
 //= require underscore
 //= require backbone
 //= require moment

@@ -35,8 +35,8 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     var renderedContent = this.template({ category: this.category });
     this.$el.html(renderedContent);
     this.attachSubviews();
-    
-    // this.indexMapView.
+
+    this.$el.find(".locations").gridalicious({animate: true});
     
     return this;
   },
