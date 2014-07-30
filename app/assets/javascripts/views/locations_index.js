@@ -10,6 +10,9 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     this.category = options.category;
     this.listenTo(this.collection, "add", this.addLocation);
     this.collection.each(this.addLocation.bind(this));
+    
+    var indexMapView = new YelpClone.Views.IndexMap({ collection: this.collection });
+    this.addSubview(".index-map", indexMapView);
   },
   
   addLocation: function (location) {

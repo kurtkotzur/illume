@@ -24,30 +24,30 @@ YelpClone.Views.UserMap = Backbone.View.extend({
     var iterator = 0;
     
     var that = this;
-    function drop() {
+    function drop () {
       for (var i = 0; i < that.model.favorites().models.length; i++) {
-        window.setTimeout(function() {
+        window.setTimeout(function () {
           addMarker();
         }, (i + 1) * 200);
       }
     }
 
-    function addMarker() {
-      var favorite = that.model.favorites().models[iterator]
+    function addMarker () {
+      var favorite = that.model.favorites().models[iterator];
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(favorite.get("latitude"), favorite.get("longitude")),
         map: map,
         animation: google.maps.Animation.DROP
       });
       favoriteMarkers.push(marker);
-      iterator++;
       var infoWindow = new google.maps.InfoWindow({
         content: that.template({ location: favorite })
       });
       infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {
         infoWindow.open(map, marker);
-      })
+      });
+      iterator++;
     }
     
     drop();

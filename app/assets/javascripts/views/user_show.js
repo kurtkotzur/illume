@@ -8,6 +8,7 @@ YelpClone.Views.UserShow = Backbone.CompositeView.extend({
     
     this.model.favorites().each(this.addFavorite.bind(this));
     this.listenTo(this.model.favorites(), "add", this.addFavorite);
+    
     var userMapView = new YelpClone.Views.UserMap({ model: this.model });
     this.addSubview(".user-map", userMapView);
   },

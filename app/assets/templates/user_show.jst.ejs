@@ -16,8 +16,10 @@
           <ul class="user-info">
             <li><strong>Location</strong></li>
             <li><%= user.escape("city") %>, <%= user.escape("state") %></li>
-            <li><strong>illuming since</strong></li>
+            <li class="li-space-before"><strong>illuming since</strong></li>
             <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
+            <li class="li-space-before"><strong>Total reviews</strong></li>
+            <li><%= user.reviews().length %></li>
           </ul>
         </div>                                                          
       </div>
@@ -33,6 +35,7 @@
     </div>
   </div>
   <div class="col-xs-5">
+    <span class="glyphicon glyphicon-star user-map-header"></span> Favorites</a>
     <div class="user-map"></div>
   </div>
 </div>

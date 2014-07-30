@@ -89,6 +89,7 @@ ul {
 
 img.img-responsive {
   max-height: 250px !important;
+  float: left;
 }
 
 .toggle-favorite {
@@ -178,7 +179,7 @@ img.logo-image {
 };*/
 
 .photo-thumbnail {
-  width: 300px;
+  width: 250px !important;
   margin: 10px;
 }
 
@@ -218,6 +219,7 @@ h2.username {
 
 .user-info {
   margin: 10px;
+  float: left;
 }
 
 //.splash {
@@ -453,8 +455,8 @@ div.thumbnail.thumbnail-small {
 }
 
 #map-canvas {
-  margin-top: 52px;
-  height: 600px;
+  margin-top: 17px;
+  height: 700px;
   width: 470px;
 }
 
@@ -464,4 +466,16 @@ div.thumbnail.thumbnail-small {
 
 .photo-thumbnail-tiny {
   width: 150px;
+}
+
+.user-map-header {
+  margin-top: 15px;
+}
+
+.li-space-before {
+  margin-top: 10px;
+}
+
+.location-index-show {
+  width: 260px !important;
 }
