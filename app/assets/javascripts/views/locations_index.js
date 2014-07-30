@@ -13,6 +13,17 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     
     this.indexMapView = new YelpClone.Views.IndexMap({ collection: this.collection });
     this.addSubview(".index-map", this.indexMapView);
+    
+    this.listenTo(this.collection, "mouseEnter", this.bounceLocation);
+    this.listenTo(this.collection, "mouseLeave", this.unbounceLocation);
+  },
+  
+  bounceLocation: function (location) {
+    this.indexMapView.locationMarkers[location.get("id")].setAnimation(google.maps.Animation.BOUNCE);
+  },
+  
+  unbounceLocation: function (location) {
+    this.indexMapView.locationMarkers[location.get("id")].setAnimation(null);
   },
   
   addLocation: function (location) {

@@ -10,7 +10,7 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
     };
     var map = new google.maps.Map(this.$el[0], mapOptions);
     
-    locationMarkers = [];
+    this.locationMarkers = {};
     infoWindows = [];
     var iterator = 0;
 
@@ -30,7 +30,7 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
         map: map,
         animation: google.maps.Animation.DROP
       });
-      locationMarkers.push(marker);
+      that.locationMarkers[current.get("id")] = marker
       var infoWindow = new google.maps.InfoWindow({
         content: that.template({ location: current }),
         maxWidth: 150

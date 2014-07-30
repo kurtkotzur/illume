@@ -6,6 +6,19 @@ YelpClone.Views.LocationIndexShow = Backbone.View.extend({
     this.listenTo(this.model, 'highlight-off', this.highlightOff);
   },
   
+  events: {
+    "mouseenter .location-index-show": "handleMouseEnter",
+    "mouseleave .location-index-show": "handleMouseLeave"
+  },
+  
+  handleMouseEnter: function () {
+    this.model.trigger("mouseEnter", this.model);
+  },
+  
+  handleMouseLeave: function () {
+    this.model.trigger("mouseLeave", this.model);
+  },
+  
   highlightOn: function () {
     this.$el.find(".location-index-show").addClass("wide-highlighted");
   },
