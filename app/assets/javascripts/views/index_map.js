@@ -38,6 +38,10 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
       infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {
         infoWindow.open(map, marker);
+        current.trigger("highlight-on");
+      });
+      google.maps.event.addListener(infoWindow, "closeclick", function () {
+        current.trigger("highlight-off");
       });
       iterator++;
     }

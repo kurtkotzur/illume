@@ -449,7 +449,7 @@ div.thumbnail.thumbnail-small {
   transition: box-shadow 0.3s ease;
 }
 
-.location-favorite-show-container:hover, .user-favorite-show-container:hover {
+.location-favorite-show-container:hover, .user-favorite-show-container:hover, .user-review-container:hover {
   box-shadow: 0px 0px 15px dimgray;
 }
 
@@ -489,4 +489,8 @@ div.thumbnail.thumbnail-small {
 
 .highlighted {
   box-shadow: 0px 0px 15px dimgray;
+}
+
+.wide-highlighted {
+  box-shadow: 0px 0px 30px dimgray;
 }
