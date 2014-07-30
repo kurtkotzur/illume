@@ -2,7 +2,9 @@
 YelpClone.Views.UserMap = Backbone.View.extend({
   id: "user-map-canvas",
   
-  template: JST["user_map"],
+  favoriteTemplate: JST["user_map_favorite"],
+  
+  reviewTemplate: JST["user_map_review"],
   
   initialize: function () {
     this.listenTo(this, "showUser", this.showUserMarker.bind(this));
@@ -64,16 +66,20 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         map: that.map,
         animation: google.maps.Animation.DROP
       });
-      debugger
+
       that.markers.push(marker);
       var infoWindow = new google.maps.InfoWindow({
-        content: that.template({ location: favorite }),
+        content: that.favoriteTemplate({ location: favorite }),
         maxWidth: 150
       });
       that.infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {
         infoWindow.open(that.map, marker);
+        favorite.trigger("highlight-on");
       });
+      google.maps.event.addListener(infoWindow, "closeclick", function () {
+        favorite.trigger("highlight-off");
+      })
       iterator++;
     }
     
@@ -97,7 +103,6 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         }, (i + 1) * 200);
       }
     }
-    // debugger
     function addMarker () {
       var review = that.model.reviews().models[iterator];
       var marker = new google.maps.Marker({
@@ -106,13 +111,18 @@ YelpClone.Views.UserMap = Backbone.View.extend({
         animation: google.maps.Animation.DROP
       });
       that.markers.push(marker);
-      // var infoWindow = new google.maps.InfoWindow({
-//         content: that.template({ location: review })
-//       });
-//       this.infoWindows.push(infoWindow);
-//       google.maps.event.addListener(marker, "click", function () {
-//         infoWindow.open(map, marker);
-//       });
+      var infoWindow = new google.maps.InfoWindow({
+        content: that.reviewTemplate({ review: review }),
+        maxWidth: 150
+      });
+      that.infoWindows.push(infoWindow);
+      google.maps.event.addListener(marker, "click", function () {
+        infoWindow.open(that.map, marker);
+        review.trigger("highlight-on");
+      });
+      google.maps.event.addListener(infoWindow, "closeclick", function () {
+        review.trigger("highlight-off");
+      })
       iterator++;
     }
     

@@ -386,7 +386,6 @@ a.opaque:hover {
 .user-review-container {
   margin: 10px;
   padding: 10px;
-  margin-left: 0px;
 }
 
 .location-favorite-show-container {
@@ -446,7 +445,7 @@ div.thumbnail.thumbnail-small {
   margin-top: 25px;
 }
 
-.location-favorite-show-container, .user-favorite-show-container {
+.location-favorite-show-container, .user-favorite-show-container, .user-review-container {
   transition: box-shadow 0.3s ease;
 }
 
@@ -488,3 +487,6 @@ div.thumbnail.thumbnail-small {
   width: 560px;
 }
 
+.highlighted {
+  box-shadow: 0px 0px 15px dimgray;
+}

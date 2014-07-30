@@ -10,8 +10,8 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
     };
     var map = new google.maps.Map(this.$el[0], mapOptions);
     
-    var locationMarkers = [];
-    var infoWindows = [];
+    locationMarkers = [];
+    infoWindows = [];
     var iterator = 0;
 
     var that = this;

@@ -3,10 +3,20 @@ YelpClone.Views.UserFavoriteShow = Backbone.View.extend({
   
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, 'highlight-on', this.highlightOn);
+    this.listenTo(this.model, 'highlight-off', this.highlightOff)
   },
   
   averageStars: function () {
     return Math.round(this.model.get("average_stars") * 2) / 2;
+  },
+  
+  highlightOn: function () {
+    this.$el.find(".user-favorite-show-container").addClass("highlighted");
+  },
+  
+  highlightOff: function () {
+    this.$el.find(".user-favorite-show-container").removeClass("highlighted");
   },
   
   render: function () {

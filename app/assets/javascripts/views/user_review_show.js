@@ -3,6 +3,16 @@ YelpClone.Views.UserReviewShow = Backbone.View.extend({
   
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, 'highlight-on', this.highlightOn);
+    this.listenTo(this.model, 'highlight-off', this.highlightOff)
+  },
+  
+  highlightOn: function () {
+    this.$el.find(".user-review-container").addClass("highlighted");
+  },
+  
+  highlightOff: function () {
+    this.$el.find(".user-review-container").removeClass("highlighted");
   },
   
   ratingClass: function () {
