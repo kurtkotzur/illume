@@ -5,21 +5,38 @@ YelpClone.Views.UserMap = Backbone.View.extend({
   template: JST["user_map"],
   
   initialize: function () {
+    this.listenTo(this, "showUser", this.showUserMarker.bind(this));
     this.listenTo(this, "showReviews", this.showReviewMarkers.bind(this));
     this.listenTo(this, "showFavorites", this.showFavoriteMarkers.bind(this));
   },
   
   mapInitialize: function () {
-    var userPosition = new google.maps.LatLng(this.model.get("latitude"), this.model.get("longitude"));
+    this.userPosition = new google.maps.LatLng(this.model.get("latitude"), this.model.get("longitude"));
     
     var mapOptions = {
-      center: userPosition,
+      center: this.userPosition,
       zoom: 13
     };
     this.map = new google.maps.Map(this.$el[0], mapOptions);
     
-    this.showFavoriteMarkers.bind(this);
+    this.showUserMarker();
 
+  },
+  
+  showUserMarker: function () {
+    _(this.markers).each( function (marker) {
+      marker.setMap(null);
+    });
+    this.markers = [];
+    this.infoWindows = [];
+    
+    var marker = new google.maps.Marker({
+      position: this.userPosition,
+      map: this.map,
+      animation: google.maps.Animation.DROP
+    })
+    
+    this.markers.push(marker);
   },
   
   showFavoriteMarkers: function () {
@@ -50,7 +67,8 @@ YelpClone.Views.UserMap = Backbone.View.extend({
       debugger
       that.markers.push(marker);
       var infoWindow = new google.maps.InfoWindow({
-        content: that.template({ location: favorite })
+        content: that.template({ location: favorite }),
+        maxWidth: 150
       });
       that.infoWindows.push(infoWindow);
       google.maps.event.addListener(marker, "click", function () {

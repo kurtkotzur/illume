@@ -14,15 +14,23 @@ YelpClone.Views.UserShow = Backbone.CompositeView.extend({
   },
   
   events: {
+    "click a#info-tab": "handleInfoTab",
     "click a#reviews-tab": "handleReviewsTab",
     "click a#favorites-tab": "handleFavoritesTab"
   },
   
+  handleInfoTab: function () {
+    $(".user-map-header").html(this.model.get("username"));
+    this.userMapView.trigger("showUser");
+  },
+  
   handleReviewsTab: function () {
+    $(".user-map-header").html("Reviews");
     this.userMapView.trigger("showReviews");
   },
   
   handleFavoritesTab: function () {
+    $(".user-map-header").html('Favorites');
     this.userMapView.trigger("showFavorites");
   },
   

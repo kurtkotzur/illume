@@ -4,7 +4,7 @@
     <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a id="info-tab" href="#info" role="tab" data-toggle="tab">Info</a></li>
       <li><a id="reviews-tab" href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
-      <li><a id="favorites-tab" href="#favorites" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-star"></span> Favorites</a></li>
+      <li><a id="favorites-tab" href="#favorites" role="tab" data-toggle="tab">Favorites</a></li>
     </ul>
     
     <div class="tab-content">
@@ -37,7 +37,9 @@
     </div>
   </div>
   <div class="col-xs-5">
-    <span class="glyphicon glyphicon-star user-map-header"></span> Favorites</a>
+    <span class="user-map-header">
+      <%= user.escape("username") %>
+    </span>
     <div class="user-map"></div>
   </div>
 </div>
