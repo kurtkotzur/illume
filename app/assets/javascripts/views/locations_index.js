@@ -45,13 +45,26 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
         gutter: 1
       });
     };
-    
-    var renderedContent = this.template({ params: this.params });
+    var parsedParams = this.parseParams();
+    debugger
+    var renderedContent = this.template({ params: this.params, parsedParams: parsedParams });
     this.$el.html(renderedContent);
     this.attachSubviews();
     
     window.setTimeout(gridaliciousize, 1);
     return this;
+  },
+  
+  parseParams: function () {
+    result = "";
+    for (var key in this.params) {
+      if (key === "category") continue;
+      result += key.replace(/_/g, " ");
+      result += ": ";
+      result += this.params[key].toLowerCase();
+      result += ", ";
+    }
+    return result.substring(0, result.length - 2);
   },
   
   submit: function (event) {
