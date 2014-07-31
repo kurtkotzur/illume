@@ -26,14 +26,14 @@
       ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
         <span class="glyphicon glyphicon-heart"></span>
       </button
-      ><span class="plain-text"><%= location.reviews().length %> Review<%= (location.reviews().length > 1) ? "s" : "" %></span>
+      ><span class="plain-text"> <%= location.reviews().length %> Review<%= (location.reviews().length > 1) ? "s" : "" %></span>
     </li>
     <li class="plain-text"><%= location.escape("category") %></li>
     <li class="li-space-before plain-text"><%= location.escape("address") %></li>
   </ul>
 
   <div class="location-photo">
-    <img src="<%= location.get('photo_url') %>" class="img-responsive">
+    <img src="<%= location.get('location_photo_url') %>" class="img-responsive">
   </div>
   </div>
   

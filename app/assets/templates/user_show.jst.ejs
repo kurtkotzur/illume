@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="col-xs-6 col-xs-offset-1">
 
@@ -15,13 +14,13 @@
           <h2 class="username"><%= user.escape("username") %></h2>
           <img src="<%= user.get('photo_url') %>" class="img-responsive">
           <ul class="user-info">
-            <li><strong>Location</strong></li>
+            <li>Location</li>
             <li class="plain-text"><%= user.escape("city") %>, <%= user.escape("state") %></li>
-            <li class="li-space-before"><strong>Total reviews</strong></li>
+            <li class="li-space-before">Total reviews</li>
             <li class="plain-text"><%= user.reviews().length %></li>
-            <li class="li-space-before"><strong>Favorited locations</strong></li>
+            <li class="li-space-before">Favorited locations</li>
             <li class="plain-text"><%= user.favorites().length %></li>
-            <li class="li-space-before"><strong>illuming since</strong></li>
+            <li class="li-space-before">illuming since</li>
             <li class="plain-text"><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
           </ul>
         </div>                                                          

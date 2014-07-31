@@ -7,7 +7,7 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   },
   
   initialize: function (options) {
-    this.category = options.category;
+    this.params = options.params;
     this.listenTo(this.collection, "add", this.addLocation);
     this.collection.each(this.addLocation.bind(this));
     
@@ -46,7 +46,7 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
       });
     };
     
-    var renderedContent = this.template({ category: this.category });
+    var renderedContent = this.template({ params: this.params });
     this.$el.html(renderedContent);
     this.attachSubviews();
     
