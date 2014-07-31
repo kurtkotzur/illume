@@ -1,5 +1,5 @@
 <a href="#/location/<%= location.get('id') %>">
-    <img src="<%= location.get('photo_url') %>" class="photo-thumbnail">
+    <img id="<%= location.get("id") %>" src="<%= location.get('photo_url') %>" class="photo-thumbnail">
     <div class="caption location-index-caption">
       <p><%= location.escape("name") %></p>
     </div>

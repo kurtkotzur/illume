@@ -22,11 +22,11 @@ YelpClone.Views.LocationIndexShow = Backbone.View.extend({
   },
   
   highlightOn: function () {
-    this.$el.find(".location-index-show").addClass("wide-highlighted");
+    $("img#" + this.model.get("id")).parent().parent().addClass("wide-highlighted");
   },
   
   highlightOff: function () {
-    this.$el.find(".location-index-show").removeClass("wide-highlighted");
+    $("img#" + this.model.get("id")).parent().parent().removeClass("wide-highlighted");
   },
   
   render: function () {
