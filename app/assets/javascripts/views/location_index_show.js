@@ -1,14 +1,16 @@
 YelpClone.Views.LocationIndexShow = Backbone.View.extend({
   template: JST["location_index_show"],
   
+  className: "thumbnail location-index-show hidden",
+  
   initialize: function () {
     this.listenTo(this.model, 'highlight-on', this.highlightOn);
     this.listenTo(this.model, 'highlight-off', this.highlightOff);
   },
   
   events: {
-    "mouseenter .location-index-show": "handleMouseEnter",
-    "mouseleave .location-index-show": "handleMouseLeave"
+    "mouseenter img": "handleMouseEnter",
+    "mouseleave img": "handleMouseLeave"
   },
   
   handleMouseEnter: function () {

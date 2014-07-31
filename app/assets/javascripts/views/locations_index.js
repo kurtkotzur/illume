@@ -32,7 +32,7 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   
   addLocation: function (location) {
     var locationShow = new YelpClone.Views.LocationIndexShow({ model: location });
-    this.addSubview(".locations", locationShow)
+    this.addSubview(".locations", locationShow);
   },
   
   render: function () {
