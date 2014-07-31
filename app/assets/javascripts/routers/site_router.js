@@ -20,7 +20,7 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     if (category) {
       var parsedCategory = category.replace(/_/g, ' ');
       YelpClone.Collections.locations.fetch({
-        data: { category: parsedCategory }
+        data: { filter_options: { category: parsedCategory } }
       });
     } else {
       YelpClone.Collections.locations.fetch();

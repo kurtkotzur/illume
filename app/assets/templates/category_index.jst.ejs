@@ -3,7 +3,7 @@
   <div class="col-xs-6">
     <h3>Pick a category to get started.</h3>
   </div>
-  <div class="col-xs-2 col-xs-offset-3">
+  <div class="col-xs-2 col-xs-offset-2">
     <h3>Find me:</h3>
   </div>
 </div>
@@ -83,6 +83,91 @@
       </div>
     </div>
     
+  </div>
+  
+  <div class="col-xs-3">
+    <form class="filter-options">
+      <div class="form-group">
+        <label for="location-ambience-input">Ambience</label>
+        <select id="ambience" class="form-control" name="location[ambience]">
+          <option value=""></option>
+          <option value="Casual">Casual</option>
+          <option value="Classy">Classy</option>
+          <option value="Hispter">Hipster</option>
+          <option value="Intimate">Intimate</option>
+          <option value="Romantic">Romantic</option>
+          <option value="Touristy">Touristy</option>
+          <option value="Trendy">Trendy</option>      
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="location-attire-input">Attire</label>
+        <select id="attire" class="form-control" name="location[attire]">
+          <option value=""></option>
+          <option value="Casual">Casual</option>
+          <option value="Dressy">Dressy</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="location-noise-input">Noise level</label>
+        <select id="noise_level" class="form-control" name="location[noise_level]">
+          <option value=""></option>
+          <option value="Silent">Silent</option>
+          <option value="Quiet">Quiet</option>
+          <option value="Average">Average</option>
+          <option value="Loud">Loud</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="location-cleanness-input">Cleanness</label>
+        <select id="cleanness" class="form-control" name="location[cleanness]">
+          <option value=""></option>
+          <option value="Filthy">Filthy</option>
+          <option value="Dirty">Dirty</option>
+          <option value="Average">Average</option>
+          <option value="Fresh">Fresh</option>
+          <option value="Immaculate">Immaculate</option>
+        </select>
+      </div>
+      
+      <div class="checkbox">
+        <label>
+          <input id="wifi" type="checkbox" name="location[wifi]" value="true">
+          Wifi
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input id="wheelchair_accessible" type="checkbox" name="location[wheelchair_accessible]" value="true">
+          Wheelchair accessible
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input id="good_for_kids" type="checkbox" name="location[good_for_kids]" value="true">
+          Good for kids
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input id="good_for_groups" type="checkbox" name="location[good_for_groups]" value="true">
+          Good for groups
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input id="outdoor" type="checkbox" name="location[outdoor]" value="true">
+          Outdoor
+        </label>
+      </div>
+    </form>
   </div>
   
 </div>

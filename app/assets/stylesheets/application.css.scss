@@ -460,7 +460,7 @@ div.thumbnail.thumbnail-small {
 #user-map-canvas {
   margin-top: 17px;
   height: 700px;
-  width: 100%;
+  width: 95%;
 }
 
 .locations-index-container {
@@ -486,9 +486,9 @@ div.thumbnail.thumbnail-small {
 
 #index-map-canvas {
   margin-top: 12px;
-  margin-left: -50px;
-  height: 700px;
-  width: 106%
+  margin-left: -10px;
+  height: 750px;
+  width: 100%
 }
 
 .highlighted {
@@ -505,4 +505,8 @@ a.opaque-link:hover {
 
 .galcolumn {
   width: 270px !important;
+}
+
+.filter-options {
+  margin-left: 25px;
 }

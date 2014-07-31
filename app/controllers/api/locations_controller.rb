@@ -33,8 +33,8 @@ module Api
     end
     
     def index
-      if params[:category]
-        @locations = Location.where(category: params[:category])
+      if params[:filter_options]
+        @locations = Location.where(params[:filter_options])
       else
         @locations = Location.all
       end
