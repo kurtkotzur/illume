@@ -7,7 +7,7 @@
       <li class="review-author">
         <a href="#/users/<%= review.user().get('id') %>"><%= review.user().escape('username') %></a>
       </li>
-      <li><%= review.user().escape("city") %>, <%= review.user().escape("state") %></li>
+      <li class="plain-text"><%= review.user().escape("city") %>, <%= review.user().escape("state") %></li>
     </ul>
   </div>
   <div class="review-body">
@@ -27,9 +27,9 @@
         ><button type="button" class="btn btn-default btn-xs static-star" data-star-id="5" disabled>
           <span class="glyphicon glyphicon-heart"></span>
         </button>
-    </div><div class="review-date">
+    </div><div class="review-date plain-text">
       <%= moment(review.escape("created_at")).format("M/DD/YY") %>
     </div>
-    <p class="review-text"><%= review.escape("body") %></p>
+    <p class="review-text plain-text"><%= review.escape("body") %></p>
   </div>
 </div>

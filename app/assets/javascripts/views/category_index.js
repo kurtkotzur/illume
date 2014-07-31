@@ -21,6 +21,9 @@ YelpClone.Views.CategoryIndex = Backbone.View.extend({
     var $input = $(event.currentTarget);
     this.params = this.params || {};
     this.params[$input.attr("id")] = $input.val();
+    if ($input.val() === "") {
+      delete this.params[$input.attr("id")];
+    }
   },
   
   filterLocations: function (event) {

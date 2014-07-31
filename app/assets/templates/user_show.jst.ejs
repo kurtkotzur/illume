@@ -16,13 +16,13 @@
           <img src="<%= user.get('photo_url') %>" class="img-responsive">
           <ul class="user-info">
             <li><strong>Location</strong></li>
-            <li><%= user.escape("city") %>, <%= user.escape("state") %></li>
+            <li class="plain-text"><%= user.escape("city") %>, <%= user.escape("state") %></li>
             <li class="li-space-before"><strong>Total reviews</strong></li>
-            <li><%= user.reviews().length %></li>
+            <li class="plain-text"><%= user.reviews().length %></li>
             <li class="li-space-before"><strong>Favorited locations</strong></li>
-            <li><%= user.favorites().length %></li>
+            <li class="plain-text"><%= user.favorites().length %></li>
             <li class="li-space-before"><strong>illuming since</strong></li>
-            <li><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
+            <li class="plain-text"><%= moment(user.escape("created_at")).format("MMMM YYYY") %>
           </ul>
         </div>                                                          
       </div>
