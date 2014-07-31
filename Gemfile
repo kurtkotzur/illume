@@ -20,6 +20,7 @@ gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'geocoder'
 gem 'addressable'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'annotate'
