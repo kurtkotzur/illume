@@ -15,9 +15,9 @@
  */
 @import "bootstrap";
 
-//* {
-//  font-family: 'Oxygen', sans-serif;
-//}
+* {
+  font-family: 'Oxygen', sans-serif;
+}
 
 nav {
   border-radius: 0 !important;
@@ -350,8 +350,7 @@ a:hover {
 }
 
 .index-caption {
-  font-size: 1.2em;
-  font-family: "Optima", Helvetica, Arial, sans-serif;
+  font-size: 1.15em;
   margin: 10px auto;
 }
 

@@ -4,7 +4,7 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
   },
   
   routes: {
-    "locations(/:category)": "locationsIndex",
+    "locations(?:params)": "locationsIndex",
     "locations/new": "locationNew",
     "location/:id": "locationShow",
     "users/:id": "userShow",
@@ -16,15 +16,16 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     this._swapView(categoryIndexView);
   },
   
-  locationsIndex: function (category) {
-    if (category) {
-      var parsedCategory = category.replace(/_/g, ' ');
+  locationsIndex: function (params) {
+    if (params) {
+      var decodedParams = this._decodeParams(params);
       YelpClone.Collections.locations.fetch({
-        data: { filter_options: { category: parsedCategory } }
+        data: { filter_options: decodedParams }
       });
     } else {
       YelpClone.Collections.locations.fetch();
     }
+    
     var location = new YelpClone.Models.Location();
     var parsedCategory = parsedCategory || "Location";
     var locationsIndexView = new YelpClone.Views.LocationsIndex({
@@ -60,5 +61,14 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     this.currentView && this.currentView.remove();
     this.$rootEl.html(newView.render().$el);
     this.currentView = newView;
+  },
+  
+  _decodeParams: function (params) {
+    var result = {};
+    params.split("&").forEach( function (pair) {
+      splitPair = pair.split("=");
+      result[splitPair[0]] = splitPair[1].replace(/_/g, " ");
+    });
+    return result;
   }
 });

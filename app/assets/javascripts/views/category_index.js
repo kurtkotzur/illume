@@ -24,21 +24,32 @@ YelpClone.Views.CategoryIndex = Backbone.View.extend({
   },
   
   filterLocations: function (event) {
-    debugger
     this.params = this.params || {};
-    this.params["category"] = $(event.currentTarget).data('cat');
+    var category = $(event.currentTarget).data('cat');
+    if (category) {
+      this.params["category"] = $(event.currentTarget).data('cat');
+    }
+    
     var that = this;
     YelpClone.Collections.locations.fetch({
       data: {filter_options: that.params},
       success: function () {
-        if (that.params["category"]) {
-          var parsedCategory = that.params["category"].replace(/ /g,"_");
-          Backbone.history.navigate("#/locations/" + parsedCategory);
-        } else {
-          Backbone.history.navigate("#/locations");
-        }
+        Backbone.history.navigate("#/locations" + that.encodeParameters());
       }
     });
+  },
+  
+  encodeParameters: function () {
+    var result = "?";
+    for (var key in this.params) {
+      var parsedKey = key.replace(/ /g,"_");
+      result += parsedKey;
+      result += "=";
+      parsedVal = String(this.params[key]).replace(/ /g,"_");
+      result += parsedVal;
+      result += "&";
+    }
+    return result.substring(0, result.length - 1);
   },
   
   render: function () {
