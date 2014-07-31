@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729184358) do
+ActiveRecord::Schema.define(version: 20140731230956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,16 @@ ActiveRecord::Schema.define(version: 20140729184358) do
     t.datetime "updated_at"
   end
 
+  add_index "days", ["location_id"], name: "index_days_on_location_id", using: :btree
+
   create_table "favorites", force: true do |t|
     t.integer "user_id",     null: false
     t.integer "location_id", null: false
   end
+
+  add_index "favorites", ["location_id", "user_id"], name: "index_favorites_on_location_id_and_user_id", using: :btree
+  add_index "favorites", ["location_id"], name: "index_favorites_on_location_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "name",                                        null: false
@@ -62,6 +68,9 @@ ActiveRecord::Schema.define(version: 20140729184358) do
     t.datetime "updated_at"
     t.integer  "location_id", null: false
   end
+
+  add_index "reviews", ["location_id"], name: "index_reviews_on_location_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",                null: false

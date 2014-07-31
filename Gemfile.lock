@@ -103,6 +103,10 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    lol_dba (1.6.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      railties (>= 3.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -204,6 +208,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  lol_dba
   newrelic_rpm
   paperclip
   pg

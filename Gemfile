@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'geocoder'
 gem 'addressable'
 gem 'newrelic_rpm'
+gem 'lol_dba'
 
 group :development do
   gem 'annotate'
