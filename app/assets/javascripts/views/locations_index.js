@@ -56,12 +56,16 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   },
   
   parseParams: function () {
-    result = "";
+    var result = "";
+    var booleanParams = ["wifi", "wheelchair accessible", "good for kids", "good for groups", "outdoor"];
     for (var key in this.params) {
       if (key === "category") continue;
-      result += key.replace(/_/g, " ");
-      result += ": ";
-      result += this.params[key].toLowerCase();
+      var parsedKey = key.replace(/_/g, " ");
+      result += parsedKey;
+      if (booleanParams.indexOf(parsedKey) === -1) {
+        result += ": ";
+        result += this.params[key].toLowerCase();
+      }
       result += ", ";
     }
     return result.substring(0, result.length - 2);
