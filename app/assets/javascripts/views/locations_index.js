@@ -7,15 +7,20 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   },
   
   initialize: function (options) {
+    index = this;
     this.params = options.params;
-    this.listenTo(this.collection, "add", this.addLocation);
-    this.collection.each(this.addLocation.bind(this));
-    
+    this.listenTo(this.collection, "reset", this.addAllTiles);
     this.indexMapView = new YelpClone.Views.IndexMap({ collection: this.collection });
     this.addSubview(".index-map", this.indexMapView);
     
     this.listenTo(this.collection, "mouseEnter", this.bounceLocation);
     this.listenTo(this.collection, "mouseLeave", this.unbounceLocation);
+  },
+  
+  addAllTiles: function(){
+    this.$('.locations').empty();
+    this.collection.each(this.addLocation.bind(this));
+    this.gridaliciousize();
   },
   
   bounceLocation: function (location) {
@@ -33,25 +38,25 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   addLocation: function (location) {
     var locationShow = new YelpClone.Views.LocationIndexShow({ model: location });
     this.addSubview(".locations", locationShow);
+    console.log(location.get('name'))
+  },
+  
+  gridaliciousize: function () {
+    this.$(".hidden").removeClass("hidden");
+    this.$el.find(".locations").gridalicious({
+      selector: ".thumbnail",
+      animate: true,
+      gutter: 1
+    });
   },
   
   render: function () {
-    var that = this;
-    function gridaliciousize() {
-      $(".hidden").removeClass("hidden");
-      that.$el.find(".locations").gridalicious({
-        selector: ".thumbnail",
-        animate: true,
-        gutter: 1
-      });
-    };
     var parsedParams = this.parseParams();
-    debugger
     var renderedContent = this.template({ params: this.params, parsedParams: parsedParams });
     this.$el.html(renderedContent);
     this.attachSubviews();
     
-    window.setTimeout(gridaliciousize, 1);
+    window.setTimeout(this.gridaliciousize.bind(this), 1);
     return this;
   },
   

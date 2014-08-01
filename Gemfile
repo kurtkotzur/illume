@@ -22,6 +22,7 @@ gem 'geocoder'
 gem 'addressable'
 gem 'newrelic_rpm'
 gem 'lol_dba'
+gem 'thin'
 
 group :development do
   gem 'annotate'

@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 @import "bootstrap";
 
 * {
@@ -129,7 +129,7 @@ img.img-responsive {
 }
 
 .location-info-container, .new-location-container {
- padding: 20px; 
+  padding: 20px; 
 }
 
 .location-left-col {
@@ -154,7 +154,7 @@ img.img-responsive {
 }
 
 .location-info-container {
-//  height: 503px;
+  //  height: 503px;
 }
 
 li.average-stars {
@@ -178,344 +178,401 @@ img.logo-image {
 }
 
 //.hoverable {
-//  transition: box-shadow 0.3s ease;
-//}
+  //  transition: box-shadow 0.3s ease;
+  //}
 
-/*.hoverable:hover {
+  /*.hoverable:hover {
   box-shadow: 0px 0px 50px palegreen;
-};*/
-
-.photo-thumbnail {
-  width: 250px !important;
-  margin: 10px;
-}
-
-div.thumbnail {
-  width: 310px;
-  float: left;
-  margin: 10px;
-}
-
-.signout-button {
-  background-color: whitesmoke;
-  color: black;
-  border-color: lightgrey;
-}
-
-.signout-button:hover {
-  background-color: #556B2F;
-  border-color: #556B2F;
-}
-
-.white-text {
-  color: white;
-}
-
-.photo-thumbnail {
-  width: 300px;
-  margin: 0px;
-}
-
-.img-responsive {
-  margin: 10px;
-}
-
-h2.username {
-  margin: 10px;
-}
-
-.user-info {
-  margin: 10px;
-  float: left;
-}
-
-//.splash {
-//  text-shadow: 1px 1px  1px black;
-//}
-
-.sign-up-button {
-  margin-top: 10px;
-}
-
-.guest-button {
-  margin-top: 10px;
-  width: 100%;
-  height: 45px;
-}
-
-.sign-in-button {
-  width: 100%;
-}
-
-.guest-button {
-  transition: box-shadow 0.3s ease;
-}
-
-.guest-button:hover {
-//  box-shadow: 0px 0px 20px whitesmoke;
-};
-
-.user-photo-small {
-  height: 50px;
-  border-radius: 3px;
-}
-
-.btn[disabled] {
-  opacity: 1;
-}
-
-.category-icon-container {
-  height: 200px;
-  width: 200px;
-  border-style: solid;
-  transition: box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.category-icon-container:hover {
-  box-shadow: 0px 0px 30px dimgray;
-};
-
-.category-icon {
-  display: block;
-  max-height: 75px;
-  margin: auto;
-}
-
-.brand-image {
-  margin-top: 5px;
-  margin-left: 0px;
-  height: 25px;
-}
-
-.location-index-show {
-  transition: box-shadow 0.3s ease;
-}
-
-.location-index-show:hover {
-  box-shadow: 0px 0px 15px dimgray;
-}
-
-.footer {
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-html, body {height: 100%;
-}
-
-#wrap {min-height: 100%;
-}
-
-#main {overflow:auto;
-	padding-bottom: 150px;
-}
-
-#footer {position: relative;
-  padding-top: 30px;
-	margin-top: -50px;
-	height: 255px;
-	clear: both;
-  margin-bottom: 0px;
-  border-radius: 0 !important;
-  border-right: none;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  text-decoration: none;
-  opacity: 0.6;
-  color: black;
-} 
-
-.bottom-copyright {
-  margin-left: -30px;
-  margin-top: 20px;
-  border-top: 1px solid black;
-}
-
-.logo-image-small {
-  height: 30px;
-}
-
-.brand-image-small {
-  height: 23px;
-  margin-top: 8px;
-}
-
-.copyright-text{
-  margin-top: 27px;
-}
-
-.index-caption {
-  font-size: 1.15em;
-  margin: 10px auto;
-}
-
-.middle-cat {
-  margin-top: 40px;
-  margin-bottom: 45px;
-}
-
-.sign-up-container {
-  margin-top: 150px;
-}
-
-a.opaque:hover {
-  opacity: 1;
-}
-
-.logo-brand-image {
-  height: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-
-.sign-up-link {
-  margin-top: 10px;
-  display: block;
-}
-
-.user-container {
-  margin-top: 10px;
-  padding: 20px;
-}
-
-.user-review-container {
-  margin: 10px;
-  padding: 10px;
-}
-
-.location-favorite-show-container {
-  height: 75px;
-  width: 200px;
-  float: left;
-}
-
-.favorite-header {
-  display: block;
-  float: left;
-//  margin-top: -0px;
-//  margin-left: -75px;
-}
-
-.category-col {
-  margin-right: 55px;
-}
-
-.category-grid, .category-grid-header {
-  margin-left: 20px;
-}
-
-.category-grid-header {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.location-index-caption {
-//  font-size: 1.1elm;
-//  font-family: "Optima", Helvetica, Arial, sans-serif;
-  margin-bottom: -18px;
-  margin-left: -5px;
-}
-
-.photo-thumbnail-small {
-  width: 250px;
-  margin: 10px;
-  margin-top: 0px;
-}
-
-div.thumbnail.thumbnail-small {
-  width: 260px;
-  float: left;
-  margin: 10px;
-}
-
-.small-caption {
-  margin-top: -20px;
-}
-
-.location-index-header {
-  margin-left: 0px;
-}
-
-.add-location {
-  margin-top: 25px;
-  margin-right: 10px;
-}
-
-.location-favorite-show-container, .user-favorite-show-container, .user-review-container {
-  transition: box-shadow 0.3s ease;
-}
-
-.location-favorite-show-container:hover, .user-favorite-show-container:hover, .user-review-container:hover {
-  box-shadow: 0px 0px 15px dimgray;
-}
-
-#user-map-canvas {
-  margin-top: 17px;
-  height: 700px;
-  width: 95%;
-}
-
-.locations-index-container {
-  margin-left: 70px;
-}
-
-.photo-thumbnail-tiny {
-  width: 150px;
-}
-
-.user-map-header {
-  display: block;
-  margin-top: 15px;
-}
-
-.li-space-before {
-  margin-top: 10px;
-}
-
-.location-index-show {
-  width: 260px !important;
-}
-
-#index-map-canvas {
-  margin-top: 12px;
-  margin-left: -10px;
-  height: 750px;
-  width: 100%
-}
-
-.highlighted {
-  box-shadow: 0px 0px 15px dimgray;
-}
-
-.wide-highlighted {
-  box-shadow: 0px 0px 30px dimgray;
-}
-
-a.opaque-link:hover {
-  opacity: 1;
-}
-
-.galcolumn {
-  width: 270px !important;
-}
-
-.filter-options {
-  margin-left: 25px;
-}
-
-.slogan {
-  margin-top: 15px;
-  margin-left: 230px;
-  font-style: italic;
-}
+  };*/
+
+  .photo-thumbnail {
+    width: 250px !important;
+    margin: 10px;
+  }
+
+  div.thumbnail {
+    width: 310px;
+    float: left;
+    margin: 10px;
+  }
+
+  .signout-button {
+    background-color: whitesmoke;
+    color: black;
+    border-color: lightgrey;
+  }
+
+  .signout-button:hover {
+    background-color: #556B2F;
+    border-color: #556B2F;
+  }
+
+  .white-text {
+    color: white;
+  }
+
+  .photo-thumbnail {
+    width: 300px;
+    margin: 0px;
+  }
+
+  .img-responsive {
+    margin: 10px;
+  }
+
+  h2.username {
+    margin: 10px;
+  }
+
+  .user-info {
+    margin: 10px;
+    float: left;
+  }
+
+  //.splash {
+    //  text-shadow: 1px 1px  1px black;
+    //}
+
+    .sign-up-button {
+      margin-top: 10px;
+    }
+
+    .guest-button {
+      margin-top: 10px;
+      width: 100%;
+      height: 45px;
+    }
+
+    .sign-in-button {
+      width: 100%;
+    }
+
+    .guest-button {
+      transition: box-shadow 0.3s ease;
+    }
+
+    .guest-button:hover {
+      //  box-shadow: 0px 0px 20px whitesmoke;
+    };
+
+    .user-photo-small {
+      height: 50px;
+      border-radius: 3px;
+    }
+
+    .btn[disabled] {
+      opacity: 1;
+    }
+
+    .category-icon-container {
+      height: 200px;
+      width: 200px;
+      border-style: solid;
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .category-icon-container:hover {
+      box-shadow: 0px 0px 30px dimgray;
+    };
+
+    .category-icon {
+      display: block;
+      max-height: 75px;
+      margin: auto;
+    }
+
+    .brand-image {
+      margin-top: 5px;
+      margin-left: 0px;
+      height: 25px;
+    }
+
+    .location-index-show {
+      transition: box-shadow 0.3s ease;
+    }
+
+    .location-index-show:hover {
+      box-shadow: 0px 0px 15px dimgray;
+    }
+
+    .footer {
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    html, body {height: 100%;
+    }
+
+    #wrap {min-height: 100%;
+    }
+
+    #main {overflow:auto;
+      padding-bottom: 150px;
+    }
+
+    #footer {position: relative;
+      padding-top: 30px;
+      margin-top: -50px;
+      height: 255px;
+      clear: both;
+      margin-bottom: 0px;
+      border-radius: 0 !important;
+      border-right: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      text-decoration: none;
+      opacity: 0.6;
+      color: black;
+    } 
+
+    .bottom-copyright {
+      margin-left: -30px;
+      margin-top: 20px;
+      border-top: 1px solid black;
+    }
+
+    .logo-image-small {
+      height: 30px;
+    }
+
+    .brand-image-small {
+      height: 23px;
+      margin-top: 8px;
+    }
+
+    .copyright-text{
+      margin-top: 27px;
+    }
+
+    .index-caption {
+      font-size: 1.15em;
+      margin: 10px auto;
+    }
+
+    .middle-cat {
+      margin-top: 40px;
+      margin-bottom: 45px;
+    }
+
+    .sign-up-container {
+      margin-top: 150px;
+    }
+
+    a.opaque:hover {
+      opacity: 1;
+    }
+
+    .logo-brand-image {
+      height: 250px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+
+    .sign-up-link {
+      margin-top: 10px;
+      display: block;
+    }
+
+    .user-container {
+      margin-top: 10px;
+      padding: 20px;
+    }
+
+    .user-review-container {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .location-favorite-show-container {
+      height: 75px;
+      width: 200px;
+      float: left;
+    }
+
+    .favorite-header {
+      display: block;
+      float: left;
+      //  margin-top: -0px;
+      //  margin-left: -75px;
+    }
+
+    .category-col {
+      margin-right: 55px;
+    }
+
+    .category-grid, .category-grid-header {
+      margin-left: 20px;
+    }
+
+    .category-grid-header {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .location-index-caption {
+      //  font-size: 1.1elm;
+      //  font-family: "Optima", Helvetica, Arial, sans-serif;
+      margin-bottom: -18px;
+      margin-left: -5px;
+    }
+
+    .photo-thumbnail-small {
+      width: 250px;
+      margin: 10px;
+      margin-top: 0px;
+    }
+
+    div.thumbnail.thumbnail-small {
+      width: 260px;
+      float: left;
+      margin: 10px;
+    }
+
+    .small-caption {
+      margin-top: -20px;
+    }
+
+    .location-index-header {
+      margin-left: 0px;
+    }
+
+    .add-location {
+      margin-top: 25px;
+      margin-right: 10px;
+    }
+
+    .location-favorite-show-container, .user-favorite-show-container, .user-review-container {
+      transition: box-shadow 0.3s ease;
+    }
+
+    .location-favorite-show-container:hover, .user-favorite-show-container:hover, .user-review-container:hover {
+      box-shadow: 0px 0px 15px dimgray;
+    }
+
+    #user-map-canvas {
+      margin-top: 17px;
+      height: 700px;
+      width: 95%;
+    }
+
+    .locations-index-container {
+      margin-left: 70px;
+    }
+
+    .photo-thumbnail-tiny {
+      width: 150px;
+    }
+
+    .user-map-header {
+      display: block;
+      margin-top: 15px;
+    }
+
+    .li-space-before {
+      margin-top: 10px;
+    }
+
+    .location-index-show {
+      width: 260px !important;
+    }
+
+    #index-map-canvas {
+      margin-top: 12px;
+      margin-left: -10px;
+      height: 750px;
+      width: 100%
+    }
+
+    .highlighted {
+      box-shadow: 0px 0px 15px dimgray;
+    }
+
+    .wide-highlighted {
+      box-shadow: 0px 0px 30px dimgray;
+    }
+
+    a.opaque-link:hover {
+      opacity: 1;
+    }
+
+    .galcolumn {
+      width: 270px !important;
+    }
+
+    .filter-options {
+      margin-left: 25px;
+    }
+
+    .slogan {
+      margin-top: 15px;
+      margin-left: 230px;
+      font-style: italic;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .spinner {
+          margin: 100px auto;
+          width: 32px;
+          height: 32px;
+          position: relative;
+        }
+
+        .cube1, .cube2 {
+          background-color: #5cb85c;
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          -webkit-animation: cubemove 1.8s infinite ease-in-out;
+          animation: cubemove 1.8s infinite ease-in-out;
+        }
+
+        .cube2 {
+          -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+        }
+
+        @-webkit-keyframes cubemove {
+          25% { -webkit-transform: translateX(100px) rotate(-90deg) scale(0.5) }
+          50% { -webkit-transform: translateX(100px) translateY(100px) rotate(-180deg) }
+          75% { -webkit-transform: translateX(0px) translateY(100px) rotate(-270deg) scale(0.5) }
+          100% { -webkit-transform: rotate(-360deg) }
+        }
+
+        @keyframes cubemove {
+          25% { 
+            transform: translateX(150px) rotate(-90deg) scale(0.5);
+            -webkit-transform: translateX(150px) rotate(-90deg) scale(0.5);
+          } 50% {
+            /* Hack to make FF rotate in the right direction */
+            transform: translateX(150px) translateY(150px) rotate(-179deg);
+            -webkit-transform: translateX(150px) translateY(150px) rotate(-179deg);
+          } 50.1% {
+            transform: translateX(150px) translateY(150px) rotate(-180deg);
+            -webkit-transform: translateX(150px) translateY(150px) rotate(-180deg);
+          } 75% {
+            transform: translateX(0px) translateY(150px) rotate(-270deg) scale(0.5);
+            -webkit-transform: translateX(0px) translateY(150px) rotate(-270deg) scale(0.5);
+          } 100% {
+            transform: rotate(-360deg);
+            -webkit-transform: rotate(-360deg);
+          }
+        }

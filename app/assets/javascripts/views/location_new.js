@@ -17,9 +17,9 @@ YelpClone.Views.LocationNew = Backbone.View.extend({
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON()["location"];
     this.model.set(params);
+    var that = this;
     this.collection.create(this.model, {
       success: function (data) {
-        console.log(data);
         Backbone.history.navigate("#/locations/" + data["id"]);
       },
       error: function () {

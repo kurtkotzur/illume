@@ -38,6 +38,7 @@ module Api
       else
         @locations = Location.all
       end
+      # sleep 2
       render :index
     end
     
