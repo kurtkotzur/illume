@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
     :reviews,
     class_name: "Review",
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
   
   has_many(
