@@ -21,7 +21,7 @@ YelpClone.Views.UserMap = Backbone.View.extend({
     };
     this.map = new google.maps.Map(this.$el[0], mapOptions);
     
-    this.showUserMarker();
+    // this.showUserMarker();
 
   },
   
