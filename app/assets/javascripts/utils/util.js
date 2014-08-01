@@ -14,4 +14,9 @@ $( function () {
       }
     });
   })
+  
+  $(".guest-button").on("click", function (event) {
+    $("#user_username").val("kurtkotzur");
+    $("#user_password").val("password");
+  })
 });
