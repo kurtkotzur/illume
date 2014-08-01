@@ -5,8 +5,8 @@ YelpClone.Views.IndexMap = Backbone.View.extend({
   
   mapInitialize: function () {
     var mapOptions = {
-      center: new google.maps.LatLng(37.781056, -122.411455),
-      zoom: 13
+      center: new google.maps.LatLng(37.758567, -122.440232),
+      zoom: 12
     };
     var map = new google.maps.Map(this.$el[0], mapOptions);
     
