@@ -17,7 +17,7 @@ YelpClone.Views.UserMap = Backbone.View.extend({
     
     var mapOptions = {
       center: this.userPosition,
-      zoom: 13
+      zoom: 12
     };
     this.map = new google.maps.Map(this.$el[0], mapOptions);
     
