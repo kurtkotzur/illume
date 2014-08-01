@@ -1,4 +1,7 @@
 YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
+  
+  className: "locations-index-el",
+  
   template: JST["locations_index"],
   
   events: {
@@ -10,17 +13,17 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     index = this;
     this.params = options.params;
     this.listenTo(this.collection, "reset", this.addAllTiles);
-    this.indexMapView = new YelpClone.Views.IndexMap({ collection: this.collection });
-    this.addSubview(".index-map", this.indexMapView);
     
     this.listenTo(this.collection, "mouseEnter", this.bounceLocation);
     this.listenTo(this.collection, "mouseLeave", this.unbounceLocation);
   },
   
   addAllTiles: function(){
-    this.$('.locations').empty();
+    this.$('.spinner-row').remove();
     this.collection.each(this.addLocation.bind(this));
     this.gridaliciousize();
+    this.indexMapView = new YelpClone.Views.IndexMap({ collection: this.collection });
+    this.addSubview(".index-map", this.indexMapView);
   },
   
   bounceLocation: function (location) {
@@ -38,7 +41,6 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
   addLocation: function (location) {
     var locationShow = new YelpClone.Views.LocationIndexShow({ model: location });
     this.addSubview(".locations", locationShow);
-    console.log(location.get('name'))
   },
   
   gridaliciousize: function () {

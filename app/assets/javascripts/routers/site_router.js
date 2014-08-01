@@ -17,7 +17,6 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
   },
   
   locationsIndex: function (params) {
-    console.log('starting locations index action')
     var fetchOptions = {data: {}, reset: true};
     var decodedParams = this._decodeParams(params || "");
     if (params) {
@@ -61,7 +60,6 @@ YelpClone.Routers.SiteRouter = Backbone.Router.extend({
     this.currentView && this.currentView.remove();
     this.$rootEl.html(newView.render().$el);
     this.currentView = newView;
-    console.log('swappin')
   },
   
   _decodeParams: function (params) {
