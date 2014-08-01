@@ -89,6 +89,7 @@ YelpClone.Views.LocationsIndex = Backbone.CompositeView.extend({
     this.collection.create(this.model, {
       success: function (data) {
         $(".modal-backdrop").remove();
+        $("#newLocationModal").modal('hide');
         Backbone.history.navigate("#/location/" + data["id"]);
       },
       error: function () {
